@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency Assistance - PlanMyTrip</title>
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Clear the form fields
+            document.getElementById('name').value = '';
+            document.getElementById('email').value = '';
+            document.getElementById('message').value = '';
+
+            // Display a thank you message
+            const thankYouMessage = document.createElement('div');
+            thankYouMessage.className = 'thank-you-message';
+            thankYouMessage.innerHTML = '<h3>Thank you for your request! We will assist you shortly.</h3>';
+            document.querySelector('.emergency-form').appendChild(thankYouMessage);
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Emergency Assistance</h1>
+    </header>
+
+    <main class="emergency-container">
+        <section class="emergency-info">
+            <h2>Immediate Assistance for Travelers</h2>
+            <p>If you are facing any kind of emergency during your travels, please fill out the form below and we will prioritize your request. Our support team is available 24/7.</p>
+        </section>
+
+        <section class="emergency-form">
+            <h2>Contact Emergency Support</h2>
+            <form action="#" method="POST" onsubmit="handleSubmit(event)">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message (Describe your emergency):</label>
+                <textarea id="message" name="message" required></textarea>
+
+                <button type="submit">Submit Emergency Request</button>
+            </form>
+        </section>
+
+        <section class="contact-info">
+            <h2>For Immediate Assistance, Contact Us Directly:</h2>
+            <p>Phone: <a href="tel:+1234567890">+1 234 567 890</a></p>
+            <p>Email: <a href="mailto:emergency@planmytrip.com">emergency@planmytrip.com</a></p>
+            <p>24/7 Support Available</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 PlanMyTrip - Emergency Assistance</p>
+    </footer>
+
+    <style>
+        /* General Page Styling */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #e0f7f1; /* Light teal background */
+        }
+
+        /* Header Section */
+        header {
+            text-align: center;
+            padding: 10px 0;  /* Reduced padding */
+            background-color: #008080; /* Teal background */
+            color: #fff;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 2.8em;  /* Reduced font size */
+            letter-spacing: 1px;
+        }
+
+        /* Emergency Container */
+        .emergency-container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 20px;
+        }
+
+        /* Emergency Information Section */
+        .emergency-info {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+        }
+
+        .emergency-info h2 {
+            font-size: 2.5em;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .emergency-info p {
+            font-size: 1.3em;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        /* Emergency Form Section */
+        .emergency-form {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+            border: 2px solid #008080; /* Teal border */
+        }
+
+        .emergency-form h2 {
+            font-size: 2.5em;
+            color: #333;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .emergency-form label {
+            display: block;
+            margin: 10px 0 5px;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .emergency-form input,
+        .emergency-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1.1em;
+        }
+
+        .emergency-form button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #008080;
+            color: #fff;
+            font-size: 1.5rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .emergency-form button:hover {
+            background-color: #004d4d; /* Darker teal on hover */
+        }
+
+        /* Thank You Message */
+        .thank-you-message h3 {
+            color: #4caf50;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 1.5em;
+        }
+
+        /* Contact Info Section */
+        .contact-info {
+            margin: 40px 0;
+            text-align: center;
+            color: #333;
+        }
+
+        .contact-info h2 {
+            font-size: 2.5em;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .contact-info p {
+            font-size: 1.5em;
+            margin: 10px 0;
+            color: #666;
+        }
+
+        .contact-info a {
+            color: #008080;
+            text-decoration: none;
+        }
+
+        /* Footer Section */
+        footer {
+            background-color: #008080; /* Teal background */
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;  /* Reduced padding */
+            font-size: 1rem;  /* Smaller font size */
+        }
+
+        footer p {
+            font-size: 1.2rem;
+        }
+    </style>
+</body>
+</html>

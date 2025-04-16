@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node-RED Dashboard</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Dark and Light Mode Colors */
+        :root {
+            --light-bg: #e2e2e2;
+            --light-bg-gradient: linear-gradient(135deg, #e2e2e2, #ffffff);
+            --light-text: #333;
+            --dark-bg: #121212;
+            --dark-bg-gradient: linear-gradient(135deg, #1f1f1f, #2a2a2a);
+            --dark-text: #f2f2f2;
+            --primary-color: #3a0558;
+            --secondary-color: #ff6b6b;
+        }
+
+        /* Default Light Mode */
+        body.light {
+            background: var(--light-bg-gradient);
+            color: var(--light-text);
+        }
+
+        /* Dark Mode */
+        body.dark {
+            background: var(--dark-bg-gradient);
+            color: var(--dark-text);
+        }
+
+        /* Body Styling */
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        /* Header Styling */
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-align: center;
+            color: var(--primary-color);
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Iframe Styling */
+        iframe {
+            width: 80%;
+            height: 80%;
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        iframe:hover {
+            transform: scale(1.02);
+        }
+
+        /* Dark/Light Mode Toggle */
+        .toggle-container {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            align-items: center;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .toggle-container input[type="checkbox"] {
+            display: none;
+        }
+
+        .toggle-label {
+            font-weight: bold;
+            color: var(--secondary-color);
+            margin-right: 10px;
+        }
+
+        .toggle-slider {
+            width: 50px;
+            height: 25px;
+            background-color: var(--primary-color);
+            border-radius: 15px;
+            position: relative;
+            transition: background-color 0.3s;
+        }
+
+        .toggle-slider::before {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 21px;
+            height: 21px;
+            background-color: #fff;
+            border-radius: 50%;
+            transition: transform 0.3s;
+        }
+
+        input[type="checkbox"]:checked + .toggle-slider::before {
+            transform: translateX(25px);
+        }
+
+        /* Button Styling */
+        .download-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: var(--secondary-color);
+            color: #fff;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .download-btn:hover {
+            background-color: #ff3b3b;
+        }
+
+    </style>
+</head>
+<body class="light">
+    <!-- Header -->
+    <h1>Node-RED Dashboard</h1>
+
+    <!-- Dark/Light Mode Toggle -->
+    <div class="toggle-container">
+        <span class="toggle-label">Dark Mode</span>
+        <input type="checkbox" id="modeToggle" />
+        <label class="toggle-slider" for="modeToggle"></label>
+    </div>
+
+    <!-- Iframe for Node-RED Dashboard -->
+    <iframe src="http://127.0.0.1:1880/ui/#!/0?socketid=rw3tMb813rBzmOk4AAAG" title="Node-RED Dashboard"></iframe>
+
+    <!-- Download Data Button -->
+    <button class="download-btn" onclick="downloadData()">Download Data</button>
+
+    <!-- JavaScript for Dark/Light Mode Toggle and Download Function -->
+    <script>
+        // Dark/Light Mode Toggle
+        const toggle = document.getElementById('modeToggle');
+        const body = document.body;
+
+        toggle.addEventListener('change', () => {
+            body.classList.toggle('dark');
+            body.classList.toggle('light');
+        });
+
+        // Download Data Function Placeholder
+        function downloadData() {
+            alert("Data download feature coming soon!");
+            // You could add code here to download data as CSV, JSON, etc.
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - PlanMyTrip</title>
+    <!-- <link rel="stylesheet" href="services.css"> -->
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Clear the form fields
+            document.getElementById('name').value = '';
+            document.getElementById('email').value = '';
+            document.getElementById('message').value = '';
+
+            // Display a thank you message
+            const thankYouMessage = document.createElement('div');
+            thankYouMessage.className = 'thank-you-message';
+            thankYouMessage.innerHTML = '<h3>Thank you for your message! We will get back to you soon.</h3>';
+            document.querySelector('.contact-form').appendChild(thankYouMessage);
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Our Services</h1>
+    </header>
+
+    <main class="services-container">
+        <!-- Services overview section -->
+        <section class="service">
+            <h2>Personalized Trip Planning</h2>
+            <p>Our team of travel experts will create a tailored travel itinerary based on your preferences, budget, and interests. We cover flights, accommodations, and activities!</p>
+        </section>
+
+        <section class="service">
+            <h2>Real-Time Updates</h2>
+            <p>Get real-time updates on your travel itinerary, flight statuses, and local events to ensure a smooth travel experience.</p>
+        </section>
+
+        <section class="service">
+            <h2>24/7 Customer Support</h2>
+            <p>Our customer support team is available 24/7 to assist with any questions or concerns before, during, or after your trip.</p>
+        </section>
+
+        <section class="service">
+            <h2>Accommodation Booking</h2>
+            <p>We offer a wide range of accommodation options to suit every budget, including luxury hotels, cozy B&Bs, and budget hostels.</p>
+        </section>
+
+        <section class="service">
+            <h2>Transportation Services</h2>
+            <p>We provide a variety of transportation options, including airport transfers and car rentals, for a hassle-free travel experience.</p>
+        </section>
+
+        <section class="service">
+            <h2>Local Experiences</h2>
+            <p>Explore local culture with curated experiences, such as guided tours, cooking classes, and adventure activities.</p>
+        </section>
+
+        <!-- Services icons section -->
+        <section class="services" id="services">
+            <h1 class="heading">
+                <span>S</span>
+                <span>E</span>
+                <span>R</span>
+                <span>V</span>
+                <span>I</span>
+                <span>C</span>
+                <span>E</span>
+                <span>S</span>
+            </h1>
+
+            <div class="box-container">
+                <div class="box">
+                    <i class="fas fa-hotel"></i>
+                    <h3>Affordable Hotels</h3>
+                    <p>Find budget-friendly hotels with us, without compromising on comfort and service.</p>
+                </div>
+                <div class="box">
+                    <i class="fas fa-utensils"></i>
+                    <h3>Food and Drinks</h3>
+                    <p>Discover amazing restaurants and enjoy delicious meals and drinks on your trip.</p>
+                </div>
+                <div class="box">
+                    <i class="fas fa-bullhorn"></i>
+                    <h3>Safety Guide</h3>
+                    <p>Travel with peace of mind by following our comprehensive safety guide.</p>
+                </div>
+                <div class="box">
+                    <i class="fas fa-globe-asia"></i>
+                    <h3>Around the World</h3>
+                    <p>Explore new destinations across the globe, with curated experiences for every traveler.</p>
+                </div>
+                <div class="box">
+                    <i class="fas fa-plane"></i>
+                    <h3>Fastest Travel</h3>
+                    <p>Get to your destination faster with our efficient travel solutions.</p>
+                </div>
+                <div class="box">
+                    <i class="fas fa-hiking"></i>
+                    <h3>Adventures</h3>
+                    <p>Embark on thrilling adventures, from hiking to extreme sports.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact form section -->
+        <section class="contact-form">
+            <h2>Contact Form</h2>
+            <form action="#" method="POST" onsubmit="handleSubmit(event)">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+
+        <!-- Contact information -->
+        <section class="contact-info">
+            <h2>Get in Touch</h2>
+            <p>Email: <a href="mailto:support@planmytrip.com">support@planmytrip.com</a></p>
+            <p>Phone: <a href="tel:+1234567890">+1 234 567 890</a></p>
+            <p>Address: 123 Travel Lane, City, State, 12345</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 PlanMyTrip - Intelligent Trip Planning Platform</p>
+    </footer>
+
+    <style>
+        /* General Page Styling */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #f1f8ff; /* Soft light blue background */
+        }
+    
+        /* Header Section */
+        header {
+            text-align: center;
+            padding: 1px 0;
+            background-color: #f49f0a; /* Vibrant orange background for header */
+            color: #fff;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Slight shadow for header */
+        }
+    
+        header h1 {
+            font-size: 3.5em;
+            letter-spacing: 2px;
+        }
+    
+        /* Services Container */
+        .services-container {
+            max-width: 1200px;
+            margin: 10px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1); /* Light shadow */
+        }
+    
+        /* Service Overview Section */
+        .service {
+            background-color: #ffffff;
+            margin: 20px 0;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+        }
+    
+        .service h2 {
+            font-size: 2.8em;
+            color: #333;
+            font-weight: bold;
+        }
+    
+        .service p {
+            font-size: 1.2em;
+            color: #555;
+            line-height: 1.5;
+        }
+    
+        /* Services Icons Section */
+        .services .heading {
+            font-size: 4rem;
+            text-align: center;
+            margin-bottom: 40px;
+            color: #333;
+            font-weight: bold;
+        }
+    
+        .services .heading span {
+            display: inline-block;
+            background-color: #f49f0a;
+            padding: 10px;
+            margin: 0 5px;
+            border-radius: 8px;
+            color: #fff;
+            font-weight: bold;
+        }
+    
+        /* Services Boxes */
+        .services .box-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+    
+        .services .box {
+            flex: 1 1 30%;
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 2px solid #f49f0a; /* Add an accent border to each service box */
+        }
+    
+        .services .box i {
+            font-size: 4rem;
+            color: #f49f0a;
+        }
+    
+        .services .box h3 {
+            font-size: 1.8rem;
+            color: #333;
+            margin: 15px 0;
+            font-weight: bold;
+        }
+    
+        .services .box p {
+            font-size: 1.2rem;
+            color: #666;
+        }
+    
+        .services .box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        }
+    
+        /* Contact Form Section */
+        .contact-form {
+            background-color: #fff;
+            margin: 40px 0;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+            border: 2px solid #f49f0a;
+        }
+    
+        .contact-form h2 {
+            font-size: 2.8em;
+            color: #333;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+    
+        .contact-form label {
+            display: block;
+            margin: 10px 0 5px;
+            color: #333;
+            font-weight: 500;
+        }
+    
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1.1em;
+        }
+    
+        .contact-form button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #f49f0a;
+            color: #fff;
+            font-size: 1.5rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+    
+        .contact-form button:hover {
+            background-color: #d48806;
+        }
+    
+        /* Thank You Message */
+        .thank-you-message h3 {
+            color: #4caf50;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 1.5em;
+        }
+    
+        /* Contact Info Section */
+        .contact-info {
+            margin: 40px 0;
+            text-align: center;
+            color: #333;
+        }
+    
+        .contact-info h2 {
+            font-size: 2.8em;
+            color: #333;
+            font-weight: bold;
+        }
+    
+        .contact-info p {
+            font-size: 1.5em;
+            margin: 10px 0;
+            color: #666;
+        }
+    
+        .contact-info a {
+            color: #f49f0a;
+            text-decoration: none;
+        }
+    
+        /* Footer Section */
+        footer {
+            background-color: #f49f0a;
+            color: #fff;
+            text-align: center;
+            padding: 5px 0;
+            font-size: 1.2rem;
+        }
+    
+        footer p {
+            font-size: 1.5rem;
+        }
+    </style>    
+</body>
+</html>

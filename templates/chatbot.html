@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI ChatBot</title>
+    <!-- Linking Google Fonts for Icon -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded">
+    <link rel="stylesheet" href="/css/chatbot.css">
+</head>
+<body>
+    <header class="header">
+
+        <!-- Header Greetings -->
+        <h2 class="title">Hello, there</h2>
+        <h4 class="subtitle">How Can I Help You Today?</h4>
+
+        <!-- Suggestion List -->
+        <ul class="suggestion-list">
+            <li class="suggestion">
+                <h4 class="text">Help me find the best travel destinations based on the current weather conditions under 50K for me and my 2 friends.</h4>
+                <span class="icon material-symbols-rounded">currency_rupee</span>
+            </li>
+            <li class="suggestion">
+                <h4 class="text">Recommend the best adventure activities like trekking, scuba diving, or safaris based on my location, and nearby attractions.</h4>
+                <span class="icon material-symbols-rounded">explore</span>
+            </li>
+            <li class="suggestion">
+                <h4 class="text">Show me real-time weather, AQI, wind speed, UV index, and other environmental conditions for my travel destination.</h4>
+                <span class="icon material-symbols-rounded">weather_mix</span>
+            </li>
+            <li class="suggestion">
+                <h4 class="text">Find the latest travel advisories, and health precautions for my destination, including entry requirements, local guidelines, and emergency contacts.</h4>
+                <span class="icon material-symbols-rounded">health_and_safety</span>
+            </li>
+        </ul>
+    </header>
+
+    <!-- Chat List -->
+    <div class="chat-list"></div>
+
+    <!-- Typing Area -->
+    <div class="typing-area">
+        <form action="#" class="typing-form">
+            <div class="input-wrapper">
+                <input type="text" placeholder="Enter a prompt here" class="typing-input" required>
+                <button class="icon material-symbols-rounded">send</button>
+            </div>
+            <div class="action-buttons">
+                <span id="toggle-theme-button" class="icon material-symbols-rounded">light_mode</span>
+                <span id="delete-chat-button" class="icon material-symbols-rounded">delete</span>
+            </div>
+        </form>
+        <p class="disclaimer-text">The ChatBot may display inaccurate info, including about people, so double-check its responses.</p>
+    </div>
+
+    <script src="/js/chatbot.js"></script>
+
+</body>
+</html>

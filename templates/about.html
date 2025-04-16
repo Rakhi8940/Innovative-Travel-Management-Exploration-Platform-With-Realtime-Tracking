@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About PlanMyTrip - Innovative Travel Management & Exploration Platform</title>
+    <style>
+        /* Global Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(to bottom right,#035347, #052257); /* Blue gradient */
+            color: #fff;
+        }
+        header {
+            text-align: center;
+            padding: 0px 0px;
+            background: rgba(0, 0, 0, 0.7);
+            border-bottom: 3px solid #FFD700;
+        }
+        header h1 {
+            font-weight: bolder;
+            font-size: 3.5em;
+            color: #f3c612;
+            margin-bottom: 15px;
+        }
+        header p {
+            font-weight: bolder;
+            font-size: 1.5em;
+            color: #ecf0f1;
+        }
+        
+        /* Welcome Section */
+        .welcome-section {
+            padding: 50px 20px;
+            color: #2e1919;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            max-width: 1000px;
+            margin: 50px auto;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+        }
+        .welcome-section h2 {
+            font-size: 2.8em;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #12393a;
+        }
+        .welcome-box {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: justify;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+        }
+        .welcome-box p {
+            font-weight: bolder;
+            font-size: 1.5em;
+            line-height: 1.8;
+            color: #04192f;
+        }
+        
+        /* Explore Section */
+        .explore-more {
+            padding: 50px 20px;
+            text-align: center;
+            background: linear-gradient(to top left, #15e1d0, #f1c40f); /* Yellow gradient */
+            color: #082440;
+            border-radius: 10px;
+        }
+        .explore-more h2 {
+            font-weight: bolder;
+            font-size: 2.8em;
+            margin-bottom: 30px;
+            color: #081e34;
+        }
+        .explore-gallery {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .explore-gallery img {
+            width: 220px;
+            height: 150px;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        .explore-gallery img:hover {
+            transform: scale(1.1);
+        }
+        .explore-gallery .destination p {
+            font-size: 1.2em;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 10px;
+            color: #352f06; /* Change to your preferred text color */
+        }
+
+        .explore-more p {
+            margin-top: 20px;
+            font-size: 1.4em;
+            font-weight: bolder;
+            color: #13375b;
+        }
+        
+        /* Footer Section */
+        footer {
+            background: linear-gradient(to bottom left, #112254, #052b2b); /* Darker gradient */
+            color: #ecf0f1;
+            text-align: center;
+            border-top: 2px solid #FFD700;
+        }
+        .footer-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .footer-box {
+            flex: 1;
+            margin: 15px;
+            text-align: center;
+        }
+        .footer-box h3 {
+            font-size: 1.8em;
+            color: #FFD700;
+            margin-bottom: 15px;
+        }
+        .footer-box ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .footer-box ul li {
+            margin-bottom: 8px;
+        }
+        .footer-box ul li a {
+            color: #ecf0f1;
+            text-decoration: none;
+            font-size: 1.1em;
+            transition: color 0.3s ease;
+        }
+        .footer-box ul li a:hover {
+            color: #f39c12;
+            text-decoration: underline;
+        }
+        footer p {
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .footer-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .footer-box {
+                max-width: 100%;
+                margin-bottom: 30px;
+            }
+            .explore-gallery {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .explore-gallery img {
+                width: 100%;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>About PlanMyTrip</h1>
+        <p>Your innovative travel companion for effortless adventures</p>
+    </header>
+    <main>
+        <section class="welcome-section">
+            <h2>Innovative Travel Management & Exploration Platform</h2>
+            <div class="welcome-box">
+                <p>We are dedicated to transforming your travel experiences with the power of cutting-edge IoT technology. Our platform offers personalized trip planning, real-time updates, and smart travel solutions that cater to your preferences. Whether you're seeking breathtaking destinations, seamless transportation, or comfortable accommodations, we are here to make every aspect of your journey effortless and memorable. Let us guide you on a stress-free adventure, ensuring that your travel dreams come true with ease and efficiency.</p>
+            </div>
+        </section>
+        <section class="explore-more">
+            <h2>Explore More Destinations</h2>
+            <div class="explore-gallery">
+                <div class="destination">
+                    <img src="/images/destination1.jpg" alt="Jaipur">
+                    <p>Jaipur</p>
+                </div>
+                <div class="destination">
+                    <img src="/images/destination2.jpg" alt="Manali">
+                    <p>Manali</p>
+                </div>
+                <div class="destination">
+                    <img src="/images/destination3.jpg" alt="Jammu & Kashmir">
+                    <p>Jammu & Kashmir</p>
+                </div>
+                <div class="destination">
+                    <img src="/images/destination4.jpg" alt="Rishikesh">
+                    <p>Rishikesh</p>
+                </div>
+                <div class="destination">
+                    <img src="/images/destination5.jpg" alt="Varanasi">
+                    <p>Varanasi</p>
+                </div>
+            </div>            
+            <p>Discover breathtaking destinations around the globe with just one click! Explore more to find out what awaits you.</p>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-box">
+                <h3>Help & Information</h3>
+                <ul>
+                    <li><a href="/templates/faqs.html">FAQs</a></li>
+                    <li><a href="/templates/privacypolicy.html">Privacy Policy</a></li>
+                    <li><a href="/templates/terms.html">Terms & Conditions</a></li>
+                    <li><a href="/templates/blog.html">Blog & News</a></li>
+                    <li><a href="/templates/help.html">Help & Support</a></li>
+                    <li><a href="/templates/explore.html">Explore More</a></li>
+                </ul>
+            </div>
+            <div class="footer-box">
+                <h3>Contact Information</h3>
+                <ul>
+                    <li>Email: contact@planmytrip.com</li>
+                    <li>Phone: +91 764 887 7357</li>
+                    <li>Address: 46 Main St, Gwalior, India</li>
+                </ul>
+            </div>
+            <div class="footer-box">
+                <h3>Popular Destinations</h3>
+                <ul>
+                    <li><a href="/templates/destinations.html">Mumbai</a></li>
+                    <li><a href="/templates/destinations.html">New Delhi</a></li>
+                    <li><a href="/templates/destinations.html">Kerala</a></li>
+                    <li><a href="/templates/destinations.html">Mysore</a></li>
+                    <li><a href="/templates/destinations.html">Darjeeling</a></li>
+                    <li><a href="/templates/destinations.html">Uttarakhand</a></li>
+                </ul>
+            </div>
+        </div>
+        <p>&copy; 2025 Innovative Travel Management & Exploration Platform With Realtime Tracking & Predictive Analytics</p>
+    </footer>
+</body>
+</html>

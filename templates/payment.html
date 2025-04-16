@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Payment Page</title>
+    <style>
+        /* General Body Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Container Styles */
+        .container {
+            width: 100%;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Heading Styles */
+        h1 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        /* Form Group Styles */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-color: #2a9d8f;
+            box-shadow: 0 0 5px rgba(42, 157, 143, 0.5);
+        }
+
+        /* Button Styles */
+        .btn {
+            display: inline-block;
+            width: 100%;
+            padding: 15px;
+            font-size: 1.2rem;
+            background-color: #2a9d8f;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #219a7a;
+        }
+
+        /* Readonly input styling */
+        .form-group input[readonly] {
+            background-color: #f7f7f7;
+            cursor: not-allowed;
+        }
+
+        /* Success message styles */
+        .success-message {
+            display: none;
+            background-color: #2a9d8f;
+            color: white;
+            padding: 20px;
+            margin-top: 20px;
+            text-align: center;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Payment for Booking ID: 12345</h1>
+
+        <form id="paymentForm">
+            <div class="form-group">
+                <label for="destination">Choose Destination:</label>
+                <select id="destination" name="destination" required>
+                    <option value="">--Choose Destination--</option>
+                    <option value="agartala">Agartala</option>
+                    <option value="agra">Agra</option>
+                    <option value="ahemdabad">Ahemdabad</option>
+                    <option value="ahmednagar">Ahmednagar</option>
+                    <!-- Add more destinations here -->
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="transportation">Choose Transportation:</label>
+                <select id="transportation" name="transportation" required>
+                    <option value="">--Choose Transportation--</option>
+                    <option value="hot_air_balloon">Hot Air Balloon</option>
+                    <option value="airplane">Airplane</option>
+                    <option value="helicopter">Helicopter</option>
+                    <option value="private_jet">Private Jet</option>
+                    <option value="train">Train</option>
+                    <!-- Add more transportation options here -->
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="cardNumber">Card Number:</label>
+                <input type="text" id="cardNumber" name="cardNumber" required>
+            </div>
+
+            <div class="form-group">
+                <label for="expiryDate">Expiry Date (MM/YY):</label>
+                <input type="text" id="expiryDate" name="expiryDate" required>
+            </div>
+
+            <div class="form-group">
+                <label for="cvv">CVV:</label>
+                <input type="text" id="cvv" name="cvv" required>
+            </div>
+
+            <div class="form-group">
+                <label for="cardholderName">Cardholder Name:</label>
+                <input type="text" id="cardholderName" name="cardholderName" required>
+            </div>
+
+            <div class="form-group">
+                <label for="amount">Amount to Pay:</label>
+                <input type="text" id="amount" name="amount" value="₹ 5000" readonly>
+            </div>
+
+            <button type="submit" class="btn">Pay Now</button>
+        </form>
+
+        <!-- Success message -->
+        <div class="success-message" id="successMessage">
+            <h3>Payment Successful!</h3>
+            <p>Your booking has been confirmed. Enjoy your trip!</p>
+        </div>
+    </div>
+
+    <script>
+        // Form submission handler
+        document.getElementById('paymentForm').addEventListener('submit', function(event) {
+            event.preventDefault();  // Prevent actual form submission
+            
+            // Get values from the form
+            const destination = document.getElementById('destination').value;
+            const transportation = document.getElementById('transportation').value;
+            const cardNumber = document.getElementById('cardNumber').value;
+            const expiryDate = document.getElementById('expiryDate').value;
+            const cvv = document.getElementById('cvv').value;
+            const cardholderName = document.getElementById('cardholderName').value;
+            const amount = document.getElementById('amount').value;
+            
+            // Simulate payment processing (you can add more validation if needed)
+            if (destination && transportation && cardNumber && expiryDate && cvv && cardholderName) {
+                // Hide the form and show the success message
+                document.querySelector('form').style.display = 'none';
+                document.getElementById('successMessage').style.display = 'block';
+                
+                // Optionally, you can log the details to the console or store them as needed
+                console.log({
+                    destination,
+                    transportation,
+                    cardNumber,
+                    expiryDate,
+                    cvv,
+                    cardholderName,
+                    amount
+                });
+            } else {
+                alert("Please fill in all the details.");
+            }
+        });
+    </script>
+</body>
+</html>

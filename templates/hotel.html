@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Search</title>
+
+    <!-- Embedded CSS -->
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+
+        header {
+            background-color: #4A90E2;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        /* Form Styles */
+        .form-section {
+            margin: 30px auto;
+            padding: 20px;
+            width: 90%;
+            max-width: 600px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            font-size: 1.2em;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #4A90E2;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #357ABD;
+        }
+
+        /* Hotel Results */
+        #hotel-results {
+            margin: 30px auto;
+            padding: 20px;
+            width: 90%;
+            max-width: 900px;
+        }
+
+        .hotel-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: transform 0.2s;
+        }
+
+        .hotel-card:hover {
+            transform: scale(1.02);
+        }
+
+        .hotel-card h3 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        .hotel-card p {
+            margin: 5px 0;
+            color: #666;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #4A90E2;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Find Hotels in Your Preferred Destination</h1>
+    </header>
+
+    <section class="form-section">
+        <form id="hotel-search-form">
+            <div class="form-group">
+                <label for="place">Place:</label>
+                <input type="text" id="place" name="place" placeholder="Enter a place" required>
+            </div>
+
+            <div class="form-group">
+                <label for="check-in">Check-in Date:</label>
+                <input type="date" id="check-in" name="check-in" required>
+            </div>
+
+            <div class="form-group">
+                <label for="check-out">Check-out Date:</label>
+                <input type="date" id="check-out" name="check-out" required>
+            </div>
+
+            <div class="form-group">
+                <label for="adults">Adults:</label>
+                <input type="number" id="adults" name="adults" min="1" value="1" required>
+            </div>
+
+            <div class="form-group">
+                <label for="children">Children:</label>
+                <input type="number" id="children" name="children" min="0" value="0">
+            </div>
+
+            <div class="form-group">
+                <label for="seniors">Seniors:</label>
+                <input type="number" id="seniors" name="seniors" min="0" value="0">
+            </div>
+
+            <button type="submit" id="search-hotel-btn">Search Hotels</button>
+        </form>
+    </section>
+
+    <section id="hotel-results">
+        <!-- Hotel results will be displayed here -->
+    </section>
+
+    <footer>
+        <p>&copy; 2024 PlanMyTrip - Find the best hotels for your stay</p>
+    </footer>
+
+    <!-- Embedded JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        document.getElementById('hotel-search-form').addEventListener('submit', function (e) {
+            e.preventDefault(); // Prevent form submission
+
+            const place = document.getElementById('place').value;
+            const checkIn = document.getElementById('check-in').value;
+            const checkOut = document.getElementById('check-out').value;
+            const adults = document.getElementById('adults').value;
+            const children = document.getElementById('children').value;
+            const seniors = document.getElementById('seniors').value;
+
+            // Check if required fields are filled
+            if (!place || !checkIn || !checkOut || !adults) {
+                alert('Please fill in all required fields');
+                return;
+            }
+
+            // API request to fetch location data and then hotels
+            const locationSettings = {
+                async: true,
+                crossDomain: true,
+                url: `https://tripadvisor16.p.rapidapi.com/api/v1/auto-complete?query=${place}`,
+                method: "GET",
+                headers: {
+                    "X-RapidAPI-Key": "ff2b14dc12msha1000e18d5840d5p1bdcccjsn63adb24b8e24",
+                    "X-RapidAPI-Host": "tripadvisor16.p.rapidapi.com"
+                }
+            };
+
+            document.getElementById('hotel-results').innerHTML = 'Loading hotels...';
+
+            // First, fetch location data to get the locationId
+            $.ajax(locationSettings).done(function (locationResponse) {
+                if (locationResponse && locationResponse.data && locationResponse.data.length > 0) {
+                    const locationId = locationResponse.data[0].location_id; // Get the first match for location
+
+                    // Now use the locationId to fetch hotels
+                    const hotelSettings = {
+                        async: true,
+                        crossDomain: true,
+                        url: `https://tripadvisor16.p.rapidapi.com/api/v1/hotel/searchHotels?locationId=${locationId}&checkin=${checkIn}&checkout=${checkOut}&adults=${adults}&children=${children}&seniors=${seniors}`,
+                        method: "GET",
+                        headers: {
+                            "X-RapidAPI-Key": "ff2b14dc12msha1000e18d5840d5p1bdcccjsn63adb24b8e24",
+                            "X-RapidAPI-Host": "tripadvisor16.p.rapidapi.com"
+                        }
+                    };
+
+                    // Fetch hotel results
+                    $.ajax(hotelSettings).done(function (response) {
+                        const hotelResults = document.getElementById('hotel-results');
+                        hotelResults.innerHTML = ''; // Clear previous content
+
+                        if (response && response.data && response.data.length > 0) {
+                            response.data.forEach(hotel => {
+                                const hotelCard = `
+                                    <div class="hotel-card">
+                                        <h3>${hotel.name}</h3>
+                                        <p>Address: ${hotel.address}</p>
+                                        <p>Rating: ${hotel.rating}</p>
+                                        <p>Price: ${hotel.price ? hotel.price : 'N/A'}</p>
+                                        <a href="${hotel.url}" target="_blank">View Hotel</a>
+                                    </div>
+                                `;
+                                hotelResults.innerHTML += hotelCard;
+                            });
+                        } else {
+                            hotelResults.innerHTML = '<p>No hotels found for the selected location and dates.</p>';
+                        }
+                    }).fail(function (jqXHR, textStatus, errorThrown) {
+                        console.error("API Request Failed: ", textStatus, errorThrown);
+                        document.getElementById('hotel-results').innerHTML = '<p>Error fetching hotels. Please try again later.</p>';
+                    });
+                } else {
+                    document.getElementById('hotel-results').innerHTML = '<p>Could not find the location. Please try another place.</p>';
+                }
+            }).fail(function (jqXHR, textStatus, errorThrown) {
+                console.error("Location API Request Failed: ", textStatus, errorThrown);
+                document.getElementById('hotel-results').innerHTML = '<p>Error fetching location. Please try again later.</p>';
+            });
+        });
+    </script>
+</body>
+
+</html>

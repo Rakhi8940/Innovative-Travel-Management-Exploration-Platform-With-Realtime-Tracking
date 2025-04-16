@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews - PlanMyTrip</title>
+    <style>
+        /* General Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #00203FFF, #ADEFD1FF);
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #ADEFD1FF;
+            color: #00203FFF;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 2.5em;
+        }
+
+        .review-container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #00203FFF;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #ADEFD1FF;
+            margin-bottom: 10px;
+            font-size: 1.8em;
+        }
+
+        label {
+            font-size: 1.2em;
+            display: block;
+            margin-top: 10px;
+        }
+
+        textarea,
+        input[type="text"],
+        input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #ADEFD1FF;
+            color: #00203FFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2em;
+        }
+
+        button:hover {
+            background-color: #0073e6;
+            color: #fff;
+        }
+
+        footer {
+            text-align: center;
+            background-color: #00203FFF;
+            color: #ADEFD1FF;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        .reviews-list {
+            margin-top: 30px;
+        }
+
+        .review-card {
+            background-color: #00456A;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .review-card h3 {
+            font-size: 1.5em;
+            color: #FFD700;
+        }
+
+        .review-card p {
+            font-size: 1.1em;
+            color: #ffffff;
+            margin-top: 10px;
+        }
+
+        .review-card span {
+            display: block;
+            font-size: 1em;
+            margin-top: 10px;
+            color: #ADEFD1FF;
+        }
+
+        .review-card .rating {
+            color: #FFD700;
+        }
+
+        /* Star Rating Styling */
+        .star-rating {
+            display: flex;
+            justify-content: start;
+            margin: 10px 0;
+        }
+
+        .star-rating input[type="radio"] {
+            display: none;
+        }
+
+        .star-rating label {
+            font-size: 2em;
+            color: #ccc;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .star-rating input[type="radio"]:checked ~ label,
+        .star-rating input[type="radio"]:hover ~ label {
+            color: #FFD700;
+        }
+
+        .star-rating label:hover {
+            color: #FFD700;
+        }
+
+        .star-rating input[type="radio"]:checked + label {
+            color: #FFD700;
+        }
+        
+        /* Disabled Star Rating */
+        .star-rating input[type="radio"]:disabled ~ label {
+            color: #b0b0b0;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Reviews</h1>
+    </header>
+
+    <main class="review-container">
+        <h2>Share Your Feedback</h2>
+        <form id="reviewForm">
+            <!-- Name Field -->
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <!-- Email Field -->
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <!-- Review Field -->
+            <label for="review">Your Review:</label>
+            <textarea id="review" name="review" rows="4" required></textarea>
+
+            <!-- Rating Field with Star Rating -->
+            <label for="rating">Your Rating:</label>
+            <div class="star-rating">
+                <input type="radio" id="star5" name="rating" value="5">
+                <label for="star5">★</label>
+                <input type="radio" id="star4" name="rating" value="4">
+                <label for="star4">★</label>
+                <input type="radio" id="star3" name="rating" value="3">
+                <label for="star3">★</label>
+                <input type="radio" id="star2" name="rating" value="2">
+                <label for="star2">★</label>
+                <input type="radio" id="star1" name="rating" value="1">
+                <label for="star1">★</label>
+            </div>
+
+            <button type="submit">Submit Review</button>
+        </form>
+
+        <div class="reviews-list">
+            <h2>Customer Reviews</h2>
+            
+            <!-- Example Review -->
+            <div class="review-card">
+                <h3>John Doe</h3>
+                <p>"PlanMyTrip made my travel planning so much easier! The platform was easy to use and the recommendations were spot on. Highly recommend it!"</p>
+                <span class="rating">Rating: 5/5</span>
+            </div>
+
+            <div class="review-card">
+                <h3>Jane Smith</h3>
+                <p>"I had a great experience with PlanMyTrip. The booking process was smooth and the customer service was excellent. I will definitely use this again for my future trips!"</p>
+                <span class="rating">Rating: 4/5</span>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2025 PlanMyTrip - Innovative Travel Management & Exploration Platform</p>
+    </footer>
+
+    <script>
+        document.getElementById("reviewForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            // Get review data from the form
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const review = document.getElementById("review").value;
+            const rating = document.querySelector('input[name="rating"]:checked') ? document.querySelector('input[name="rating"]:checked').value : 0;
+
+            // Display the submitted review
+            const reviewList = document.querySelector(".reviews-list");
+
+            const newReview = document.createElement("div");
+            newReview.classList.add("review-card");
+
+            newReview.innerHTML = `
+                <h3>${name}</h3>
+                <p>"${review}"</p>
+                <span class="rating">Rating: ${rating}/5</span>
+            `;
+
+            reviewList.appendChild(newReview);
+
+            // Clear the form
+            document.getElementById("reviewForm").reset();
+        });
+    </script>
+</body>
+</html>

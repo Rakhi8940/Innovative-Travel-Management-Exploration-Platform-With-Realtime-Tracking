@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Booking</title>
+</head>
+<body>
+
+    <header>
+        <h1>Book Your Travel</h1>
+    </header>
+
+    <section id="booking-form">
+        <form id="travelForm">
+            <h2>Choose Your Destination</h2>
+
+            <!-- Destination Dropdown -->
+            <label for="destination">Destination:</label>
+            <select id="destinationSelect" name="destination" required>
+                <option value="">Select Destination</option>
+                <option value="agartala">Agartala</option>
+                <option value="agra">Agra</option>
+                <option value="ahemdabad">Ahemdabad</option>
+                <option value="ahmednagar">Ahmednagar</option>
+                <option value="ajmer">Ajmer</option>
+                <option value="almora">Almora</option>
+                <option value="amritsar">Amritsar</option>
+                <option value="aurangabad">Aurangabad</option>
+                <option value="bareilly">Bareilly</option>
+                <option value="bengaluru">Bengluru</option>
+                <option value="bhubaneshwar">Bhubneshwar</option>
+                <option value="almora">Almora</option>
+                <option value="chanderi">Chanderi</option>
+                <option value="chennai">Chennai</option>
+                <option value="coimbatore">Coimbatore</option>
+                <option value="darjeeling">Darjeeling</option>
+                <option value="dehradun">Dehradun</option>
+                <option value="delhi">Delhi</option>
+                <option value="devas">Devas</option>
+                <option value="dharamshala">Dharamshala</option>
+                <option value="dwarka">Dwarka</option>
+                <option value="firozabad">Firozabad</option>
+                <option value="gangtok">Gangtok</option>
+                <option value="goa">Goa</option>
+                <option value="gurugram">Gurugram</option>
+                <option value="guwahati">Guwahati</option>
+                <option value="gwalior">Gwalior</option>
+                <option value="hampi">Hampi</option>
+                <option value="haridwar">Haridwar</option>
+                <option value="hyderabad">Hyderabad</option>
+                <option value="indore">Indore</option>
+                <option value="itanagar">Itanagar</option>
+                <option value="jaipur">Jaipur</option>
+                <option value="jaisalmer">Jaisalmer</option>
+                <option value="jammu">Jammu</option>
+                <option value="jodhpur">Jodhpur</option>
+                <option value="kanpur">Kanpur</option>
+                <option value="kanyakumari">Kanyakumari</option>
+                <option value="kochi">Kochi</option>
+                <option value="kohima">Kohima</option>
+                <option value="kolkata">Kolkata</option>
+                <option value="kota">Kota</option>
+                <option value="kullu">Kullu</option>
+                <option value="lonavala">Lonavala</option>
+                <option value="lucknow">Lucknow</option>
+                <option value="Ludhiana">Ludhiana</option>
+                <option value="madhurai">Madhurai</option>
+                <option value="manglore">Manglore</option>
+                <option value="manali">Manali</option>
+                <option value="mathura">Mathura</option>
+                <option value="mumbai">Mumbai</option>
+                <option value="munnar">Munnar</option>
+                <option value="mussorie">Mussoorie</option>
+                <option value="mysore">Mysore</option>
+                <option value="nagpur">Nagpur</option>
+                <option value="nainital">Nainital</option>
+                <option value="nashik">Nashik</option>
+                <option value="noida">Noida</option>
+                <option value="ooty">Ooty</option>
+                <option value="panaji">Panaji</option>
+                <option value="patiala">Patiala</option>
+                <option value="patna">Patna</option>
+                <option value="pondicherry">Pondicherry</option>
+                <option value="prayagraj">Prayagraj</option>
+                <option value="pune">Pune</option>
+                <option value="pushkar">Pushkar</option>
+                <option value="rameshwaram">Rameshwaram</option>
+                <option value="ranchi">Ranchi</option>
+                <option value="rishikesh">Rishikesh</option>
+                <option value="shimla">Shimla</option>
+                <option value="srinagar">Srinagar</option>
+                <option value="tirupati">Tirupati</option>
+                <option value="udaipur">Udaipur</option>
+                <option value="varanasi">Varanasi</option>
+                <option value="vasco_di_gama">Vasco Di Gama</option>
+                <option value="vellore">Vellore</option>
+                <option value="vishakhapatnam">Vishakhapatnam</option>
+                <option value="yamunanagar">Yamunanagar</option>
+            </select>
+
+            <!-- Transportation Dropdown -->
+            <label for="transportation">Transportation:</label>
+            <select id="transportation" name="transportation" required>
+                <option value="">Select Transportation</option>
+                <option value="hot_air_balloon">Hot Air Balloon</option>
+                <option value="airplane">Airplane</option>
+                <option value="helicopter">Helicopter</option>
+                <option value="private_jet">Private Jet</option>
+                <option value="train">Train</option>
+                <option value="bus/coach">Bus/Coach</option>
+                <option value="private_car">Taxi/Private Car</option>
+                <option value="uber/lyft">Uber/ Lyft</option>
+                <option value="cable_car">Cable Car</option>
+                <option value="segway">Segway</option>
+                <option value="ferry">Ferry</option>
+                <option value="tourist_van">Tourist Van</option>
+                <option value="ship">Ship</option>
+                <option value="speed_boat">Speed Boat</option>
+                <option value="yacht/private_boat">Yacht/ Private Boat</option>
+            </select>
+
+            <!-- Accommodation Dropdown -->
+            <label for="accommodation">Accommodation:</label>
+            <select id="accommodation" name="accommodation" required>
+                <option value="">Select Accommodation</option>
+            </select>
+
+            <!-- Other Form Fields -->
+            <h2>Ticket Information</h2>
+            <label for="start-date">Travel Start Date:</label>
+            <input type="date" id="start-date" name="start-date" required>
+
+            <label for="end-date">Travel End Date:</label>
+            <input type="date" id="end-date" name="end-date" required>
+
+            <label for="num-travelers">Number of Travelers:</label>
+            <input type="number" id="num-travelers" name="num-travelers" min="1" required>
+
+            <h2>Guide Option</h2>
+            <label for="guide">Need a Guide?</label>
+            <input type="checkbox" id="guide" name="guide">
+            <div id="guide-info" style="display: none;">
+                <label for="guide-contact">Guide Contact:</label>
+                <input type="text" id="guide-contact" name="guide-contact">
+            </div>
+
+            <h2>Upload Verification Document</h2>
+            <label for="doc-type">Document Type:</label>
+            <select id="doc-type" name="doc-type" required>
+                <option value="aadhar">Aadhar Card</option>
+                <option value="pan">PAN Card</option>
+                <option value="license">Driving License</option>
+            </select>
+            <input type="file" id="doc-upload" name="doc-upload" required>
+
+            <h2>Traveler Information</h2>
+            <div id="travelers-info"></div>
+
+            <button type="submit">Submit Booking</button>
+        </form>
+    </section>
+
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(to right, #00203FFF, #ADEFD1FF); /* Contrast color */
+        color: #ffffff;
+        line-height: 1.6;
+    }
+
+    header {
+        background-color: #ADEFD1FF; /* Accent color */
+        color: #00203FFF;
+        text-align: center;
+        padding: 20px 0;
+        font-size: 2.5em;
+    }
+
+    #booking-form {
+        max-width: 800px;
+        margin: 30px auto;
+        padding: 20px;
+        background-color: #00203FFF;
+        border-radius: 8px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+        color: #ADEFD1FF;
+        margin-bottom: 10px;
+        font-size: 1.8em;
+    }
+
+    label {
+        font-size: 1.2em;
+        display: block;
+        margin-top: 10px;
+    }
+
+    input, select {
+        width: 100%;
+        padding: 10px;
+        margin: 8px 0;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+        background-color: #ADEFD1FF;
+        color: #00203FFF;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1.2em;
+    }
+
+    button:hover {
+        background-color: #0073e6;
+        color: #fff;
+    }
+
+    footer {
+        text-align: center;
+        background-color: #00203FFF;
+        color: #ADEFD1FF;
+        padding: 10px 0;
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+    }
+
+    #guide-info {
+        margin-top: 10px;
+        padding: 10px;
+        background-color: #00456A;
+        border-radius: 5px;
+    }
+
+    input[type="file"] {
+        padding: 6px;
+    }
+
+    #travelers-info {
+        margin-top: 20px;
+    }
+
+    #travelers-info label {
+        margin-bottom: 5px;
+    }
+    </style>
+
+    <footer>
+        <p>© 2025 Travel Booking Platform. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Example data for the dropdowns (you can replace with dynamic data if needed)
+        const cities = ['New York', 'London', 'Tokyo', 'Paris', 'Sydney'];
+        const transportationOptions = ['Airplane', 'Train', 'Car', 'Bus'];
+        const accommodationOptions = ['Hotel', 'Hostel', 'Apartment', 'Resort'];
+
+        // Populate dropdowns
+        const destinationSelect = document.getElementById('destinationSelect');
+        const transportationSelect = document.getElementById('transportation');
+        const accommodationSelect = document.getElementById('accommodation');
+
+        function populateDropdown(selectElement, options) {
+            options.forEach(option => {
+                const optElement = document.createElement('option');
+                optElement.value = option;
+                optElement.textContent = option;
+                selectElement.appendChild(optElement);
+            });
+        }
+
+        populateDropdown(destinationSelect, cities);
+        populateDropdown(transportationSelect, transportationOptions);
+        populateDropdown(accommodationSelect, accommodationOptions);
+
+        // Handle guide checkbox
+        const guideCheckbox = document.getElementById('guide');
+        const guideInfo = document.getElementById('guide-info');
+
+        guideCheckbox.addEventListener('change', () => {
+            guideInfo.style.display = guideCheckbox.checked ? 'block' : 'none';
+        });
+
+        // Handle number of travelers input
+        const numTravelersInput = document.getElementById('num-travelers');
+        const travelersInfoDiv = document.getElementById('travelers-info');
+
+        numTravelersInput.addEventListener('input', () => {
+            const numTravelers = numTravelersInput.value;
+            travelersInfoDiv.innerHTML = ''; // Clear previous traveler inputs
+            for (let i = 1; i <= numTravelers; i++) {
+                const travelerDiv = document.createElement('div');
+                travelerDiv.innerHTML = `
+                    <h3>Traveler ${i} Information</h3>
+                    <label for="traveler-name-${i}">Name:</label>
+                    <input type="text" id="traveler-name-${i}" name="traveler-name-${i}" required>
+                    <label for="traveler-age-${i}">Age:</label>
+                    <input type="number" id="traveler-age-${i}" name="traveler-age-${i}" required>
+                `;
+                travelersInfoDiv.appendChild(travelerDiv);
+            }
+        });
+
+        // Form submission: redirect to payment page
+        const form = document.getElementById('travelForm');
+        form.addEventListener('submit', (event) => {
+            event.preventDefault(); // Prevent default form submission
+
+            // You can perform form validation here (optional)
+
+            // Redirect to payment page
+            window.location.href = '/templates/payment.html';  // Replace with your actual payment page URL
+        });
+    </script>
+
+</body>
+</html>

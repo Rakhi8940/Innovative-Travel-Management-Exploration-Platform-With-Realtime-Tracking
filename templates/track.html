@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Location and Weather Tracker</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: url('https://images.unsplash.com/photo-1519125323398-675f0ddb6308?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwyMDg2N3wwfDF8c2VhcmNofDF8fGJsdXUlMjBzaWduJTIwYmFja2dyb3V0ZW58ZW58MHx8fHwxNjI1MjkwNjAx&ixlib=rb-1.2.1&q=80&w=1080') no-repeat center center fixed; 
+            background-size: cover;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Title Style */
+        h1 {
+            font-size: 3.5rem;
+            color: #fff;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+            margin-bottom: 20px;
+        }
+
+        /* Container for Side by Side Layout */
+        .container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
+            width: 100%;
+            max-width: 1200px; /* Maximum width for larger screens */
+        }
+
+        /* Location Tracking Section */
+        #locationTracker, .weather {
+            background: rgba(9, 13, 54, 0.8);
+            border: 2px solid #ddd;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0px 10px 20px rgba(20, 6, 93, 0.3);
+            width: 400px;
+            margin: 20px; /* Margin for spacing */
+            transition: transform 0.3s ease;
+        }
+
+        #locationTracker:hover, .weather:hover {
+            transform: scale(1.05);
+        }
+
+        /* Button Style */
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50; /* Button color */
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #45a049; /* Darker shade on hover */
+            transform: translateY(-2px);
+        }
+
+        /* Weather Section */
+        .weather {
+            margin-top: 30px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 500px) {
+            #locationTracker, .weather {
+                width: 90%;
+            }
+            h1 {
+                font-size: 2.5rem;
+            }
+        }
+        /* Track Conditions Box Styling */
+        /* Track Conditions Box Styling */
+        .track-conditions-box {
+            background-color: rgba(9, 13, 54, 0.8);
+            border: 2px solid #ddd;
+            border-radius: 15px;
+            padding: 0;
+            width: 400px;
+            text-align: center;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+            overflow: hidden; /* Ensures rounded corners for the image */
+            transition: transform 0.3s ease;
+        }
+
+        .track-conditions-box:hover {
+            transform: scale(1.05);
+        }
+
+        /* Heading Styling */
+        .track-heading {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #333;
+            padding: 15px 0;
+            margin: 0;
+            background-color: #fcfcfc;
+            border-bottom: 2px solid #ddd;
+        }
+
+        /* Image Styling for Full Width */
+        .track-conditions-img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Button Styling */
+        .track-conditions {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 12px 25px;
+            font-size: 18px;
+            font-weight: bold;
+            background-color: #FF5722;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 0 0 15px 15px; /* Rounded corners for the bottom of the box */
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .track-conditions:hover {
+            background-color: #E64A19;
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .track-conditions:active {
+            transform: scale(1);
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+        }
+
+
+        /* Input Field Style */
+        input[type="text"] {
+            padding: 10px;
+            width: 100%;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        /* Input Field Focus Effect */
+        input[type="text"]:focus {
+            border-color: #4CAF50;
+            outline: none;
+            box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+        }
+
+        /* Map Style */
+        #map {
+            height: 300px;
+            width: 100%;
+            border: 2px solid #333;
+            border-radius: 10px;
+            margin-top: 15px;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Paragraph Text Style */
+        p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Location and Weather Tracker</h1>
+
+    <!-- Container for Side by Side Sections -->
+    <div class="container">
+        <!-- Location Tracker Section -->
+        <div id="locationTracker">
+            <h2>Track My Location</h2>
+            <button onclick="trackLocation()">Track Location</button>
+            <p id="coordinates">Press the button to get your coordinates.</p>
+            <p id="address"></p> <!-- Paragraph to display complete address -->
+            <div id="map"></div>
+        </div>
+
+        <!-- Weather Information Section -->
+        <div id="weatherInfo" class="weather">
+            <h2>Weather Info</h2>
+            <p id="weatherData">Enter a city to view weather information.</p>
+            <input type="text" id="weatherCityInput" placeholder="Enter city name for weather">
+            <button id="weatherBtn">Get Weather</button>
+        </div>
+
+        <!-- Link to Track Travel Conditions -->
+        <div id="trackConditionsBox" class="track-conditions-box">
+            <h2 class="track-heading">Track Travel</h2>
+            <img src="/images/tracktravel.jpg" alt="Travel Conditions Icon" class="track-conditions-img">
+            <a href="/templates/nodered.html" class="track-conditions">Track Travel Conditions</a>
+        </div>               
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // Your RapidAPI key
+        const rapidApiKey = "ad74aa05d5msh86615d6b736d97fp1d9fd7jsnc694e762a2c7";
+
+        // Function to get the current location
+        function trackLocation() {
+            if (navigator.geolocation) {
+                document.getElementById("coordinates").innerText = "Locating...";
+                navigator.geolocation.getCurrentPosition(showCoordinates, showError);
+            } else {
+                alert("Geolocation is not supported by this browser.");
+            }
+        }
+
+        // Function to display coordinates and call the API for address
+        function showCoordinates(position) {
+            const latitude = position.coords.latitude;
+            const longitude = position.coords.longitude;
+
+            // Display latitude and longitude
+            document.getElementById("coordinates").innerText = `Latitude: ${latitude}, Longitude: ${longitude}`;
+
+            // Call function to get the address
+            getCompleteAddress(latitude, longitude);
+            // Show the map
+            showMap(latitude, longitude);
+        }
+
+        // Function to get the complete address using RapidAPI
+        function getCompleteAddress(latitude, longitude) {
+            const rapidApiUrl = `https://google-map-places.p.rapidapi.com/maps/api/geocode/json?latlng=${latitude},${longitude}&language=en`;
+
+            const options = {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-RapidAPI-Key': rapidApiKey,
+                    'X-RapidAPI-Host': 'google-map-places.p.rapidapi.com'
+                }
+            };
+
+            fetch(rapidApiUrl, options)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.results && data.results.length > 0) {
+                        document.getElementById("address").innerText = `Address: ${data.results[0].formatted_address}`;
+                    } else {
+                        document.getElementById("address").innerText = "Address data not available.";
+                    }
+                })
+                .catch(error => {
+                    console.error("Error fetching location data:", error);
+                });
+        }
+
+        // Function to show the map
+        function showMap(latitude, longitude) {
+            document.getElementById("map").innerHTML = `<iframe width="100%" height="300" src="https://maps.google.com/maps?q=${latitude},${longitude}&amp;z=15&amp;output=embed"></iframe>`;
+        }
+
+        // Error handling for geolocation
+        function showError(error) {
+            switch (error.code) {
+                case error.PERMISSION_DENIED:
+                    alert("User denied the request for Geolocation.");
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    alert("Location information is unavailable.");
+                    break;
+                case error.TIMEOUT:
+                    alert("The request to get user location timed out.");
+                    break;
+                case error.UNKNOWN_ERROR:
+                    alert("An unknown error occurred.");
+                    break;
+            }
+            document.getElementById("coordinates").innerText = "Unable to retrieve location.";
+        }
+
+        // Weather tracking section
+        const weatherBtn = document.getElementById("weatherBtn");
+
+        weatherBtn.onclick = function () {
+            const city = document.getElementById("weatherCityInput").value.trim();
+            if (city) {
+                getWeather(city);
+            } else {
+                alert("Please enter a city name.");
+            }
+        };
+
+        // Function to Get Weather Data
+        async function getWeather(city) {
+            const weatherApiKey = 'd9867546959a1d88e7c5198c55e71d6e'; // Replace with your OpenWeatherMap API key
+            const weatherApiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${weatherApiKey}&units=metric`;
+
+            try {
+                const response = await fetch(weatherApiUrl);
+                const data = await response.json();
+
+                if (data.cod === 200) { // Check if response is successful
+                    displayWeather(data);
+                } else {
+                    alert("City not found. Please enter a valid city name.");
+                }
+            } catch (error) {
+                console.error("Error fetching weather data:", error);
+            }
+        }
+
+        // Function to display weather data
+        function displayWeather(data) {
+            const { name, main: { temp }, weather } = data;
+            const temperature = temp.toFixed(1); // Round temperature to 1 decimal place
+            const description = weather[0].description;
+            const icon = `http://openweathermap.org/img/wn/${weather[0].icon}@2x.png`;
+
+            document.getElementById("weatherData").innerHTML = `
+                <strong>${name}</strong>
+                <p>Temperature: ${temperature}°C</p>
+                <p>Description: ${description}</p>
+                <img src="${icon}" alt="${description}" />
+            `;
+        }
+    </script>
+    
+</body>
+</html>

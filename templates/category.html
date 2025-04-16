@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Categories</title>
+    <!-- <link rel="stylesheet" href="category.css"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1 class="heading">Explore Our Categories</h1>
+    </header>
+
+    <div class="category-container">
+        <div class="category-card">
+            <img src="/images/desert_safari.jpg" alt="Desert Safari">
+            <h2>Desert Safari</h2>
+            <p>Experience the thrill of desert adventures.</p>
+            <a href="#" class="btn">Know More</a>
+        </div>
+        
+        <div class="category-card">
+            <img src="/images/jungle_safari.jpg" alt="Jungle Safari">
+            <h2>Jungle Safari</h2>
+            <p>Discover the wild beauty of nature.</p>
+            <a href="#" class="btn">Know More</a>
+        </div>
+        
+        <div class="category-card">
+            <img src="/images/city_tour.jpg" alt="City Tour">
+            <h2>City Tour</h2>
+            <p>Explore the best attractions in the city.</p>
+            <a href="#" class="btn">Know More</a>
+        </div>
+
+        <div class="category-card">
+            <img src="/images/theme_park.jpg" alt="Theme Park">
+            <h2>Theme Park</h2>
+            <p>Enjoy fun-filled days at thrilling theme parks.</p>
+            <a href="#" class="btn">Know More</a>
+        </div>
+
+        <div class="category-card">
+            <img src="/images/historical_places.jpg" alt="Historical Places">
+            <h2>Historical Places</h2>
+            <p>Visit iconic sites rich in history.</p>
+            <a href="#" class="btn">Know More</a>
+        </div>
+
+        <div class="category-card">
+            <img src="/images/religious_places.jpg" alt="Religious Places">
+            <h2>Religious Places</h2>
+            <p>Experience the spiritual side of destinations.</p>
+            <a href="#" class="btn">Know More</a>
+        </div>
+
+        <div class="category-card">
+            <img src="/images/watelfalls.jpg" alt="Waterfalls">
+            <h2>Waterfalls</h2>
+            <p>Witness the breathtaking beauty of nature's cascades.</p>
+            <a href="#" class="btn">Know More</a>
+        </div>
+
+        <div class="category-card">
+            <img src="/images/mountains.jpg" alt="Mountains">
+            <h2>Mountains</h2>
+            <p>Explore the majestic peaks and valleys.</p>
+            <a href="#" class="btn">Know More</a>
+        </div>
+
+        <div class="category-card">
+            <img src="/images/beaches.jpg" alt="Beaches">
+            <h2>Beaches</h2>
+            <p>Relax on the most beautiful beaches.</p>
+            <a href="#" class="btn">Know More</a>
+        </div>
+
+        <div class="category-card">
+            <img src="/images/monuments.jpg" alt="Monuments">
+            <h2>Monuments</h2>
+            <p>Discover the architectural wonders of the world.</p>
+            <a href="#" class="btn">Know More</a>
+        </div>
+
+        <div class="category-card">
+            <img src="/images/malls.jpg" alt="Shopping Malls">
+            <h2>Shopping Malls</h2>
+            <p>Experience the thrill of shopping.</p>
+            <a href="#" class="btn">Know More</a>
+        </div>
+
+        <div class="category-card">
+            <img src="/images/famous.jpg" alt="Famous Places">
+            <h2>Famous Places</h2>
+            <p>Explore iconic landmarks around the world.</p>
+            <a href="#" class="btn">Know More</a>
+        </div>
+
+        <div class="category-card">
+            <img src="/images/markets.jpg" alt="Market">
+            <h2>Market</h2>
+            <p>Experience the vibrant local markets.</p>
+            <a href="#" class="btn">Know More</a>
+        </div>
+
+        <div class="category-card">
+            <img src="/images/outdoor.jpg" alt="Outdoor Attraction">
+            <h2>Outdoor Attractions</h2>
+            <p>Experience exciting adventures in nature.</p>
+            <a href="#" class="btn">Know More</a>
+        </div>
+
+        <div class="category-card">
+            <img src="/images/food.jpg" alt="Food">
+            <h2>Food</h2>
+            <p>Discover delicious local cuisines and dining experiences.</p>
+            <a href="#" class="btn">Know More</a>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2025 PlanMyTrip. All rights reserved.</p>
+    </footer>
+
+    <style>
+        /* styles.css */
+        /* General Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #007bff;
+            padding: 20px 0;
+        }
+
+        .heading {
+            text-align: center;
+            font-size: 3.5rem; /* Increased font size */
+            letter-spacing: 2px; /* Increased letter spacing */
+            color: #fff;
+            margin: 0;
+        }
+
+        /* Category Container */
+        .category-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        /* Category Card Style */
+        .category-card {
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .category-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .category-card h2 {
+            font-size: 2rem; /* Increased font size */
+            margin: 10px 0;
+            color: #007bff;
+        }
+
+        .category-card p {
+            color: #555;
+            font-size: 1rem;
+            padding: 0 20px;
+        }
+
+        /* Button Styles */
+        .btn {
+            margin: 15px 0;
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #ff5722;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</body>
+</html>

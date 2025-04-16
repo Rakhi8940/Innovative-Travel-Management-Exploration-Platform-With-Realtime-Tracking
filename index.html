@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Innovative Travel Management & Exploration Platform With Realtime Tracking & Predictive Analytics</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="icon" href="images/p-2.jpg">
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- wow js -->
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/lightbox.css">
+    <!-- owl crouse css file  -->
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/fakeLoader.min.css">
+    <!-- scroling aos.css -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- ChatBot icon link -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=tv_signin" />
+
+</head>
+<body>
+    
+<!-- header section starts  -->
+
+<header class="wow fadeInDown" data-wow-duration="4s" >
+
+    <div id="menu-bar" class="fas fa-bars"></div>
+
+    <a href="#" class="logo"><img src="images/PlanMyTrip.jpeg" alt="logo"></a>
+
+    <nav class="navbar">
+        <a href="#home">Home</a>
+        <div class="dropdown-container">
+            <label for="month-select">Choose Month:</label>
+            <select id="month-select" onchange="monthSelected()">
+                <option value="">--Choose a month--</option>
+                <option value="january">January</option>
+                <option value="february">February</option>
+                <option value="march">March</option>
+                <option value="april">April</option>
+                <option value="may">May</option>
+                <option value="june">June</option>
+                <option value="july">July</option>
+                <option value="august">August</option>
+                <option value="september">September</option>
+                <option value="october">October</option>
+                <option value="november">November</option>
+                <option value="december">December</option>
+            </select>
+        </div>
+        <div class="dropdown-container">
+            <label for="destination-select">Choose Destination:</label>
+            <select id="destination-select" onchange="destinationSelected()">
+                <option value="">--Choose Destination--</option>
+                <option value="agartala">Agartala</option>
+                <option value="agra">Agra</option>
+                <option value="ahemdabad">Ahemdabad</option>
+                <option value="ahmednagar">Ahmednagar</option>
+                <option value="ajmer">Ajmer</option>
+                <option value="almora">Almora</option>
+                <option value="amritsar">Amritsar</option>
+                <option value="aurangabad">Aurangabad</option>
+                <option value="bareilly">Bareilly</option>
+                <option value="bengaluru">Bengluru</option>
+                <option value="bhubaneshwar">Bhubneshwar</option>
+                <option value="almora">Almora</option>
+                <option value="chanderi">Chanderi</option>
+                <option value="chennai">Chennai</option>
+                <option value="coimbatore">Coimbatore</option>
+                <option value="darjeeling">Darjeeling</option>
+                <option value="dehradun">Dehradun</option>
+                <option value="delhi">Delhi</option>
+                <option value="devas">Devas</option>
+                <option value="dharamshala">Dharamshala</option>
+                <option value="dwarka">Dwarka</option>
+                <option value="firozabad">Firozabad</option>
+                <option value="gangtok">Gangtok</option>
+                <option value="goa">Goa</option>
+                <option value="gurugram">Gurugram</option>
+                <option value="guwahati">Guwahati</option>
+                <option value="gwalior">Gwalior</option>
+                <option value="hampi">Hampi</option>
+                <option value="haridwar">Haridwar</option>
+                <option value="hyderabad">Hyderabad</option>
+                <option value="indore">Indore</option>
+                <option value="itanagar">Itanagar</option>
+                <option value="jaipur">Jaipur</option>
+                <option value="jaisalmer">Jaisalmer</option>
+                <option value="jammu">Jammu</option>
+                <option value="jodhpur">Jodhpur</option>
+                <option value="kanpur">Kanpur</option>
+                <option value="kanyakumari">Kanyakumari</option>
+                <option value="kochi">Kochi</option>
+                <option value="kohima">Kohima</option>
+                <option value="kolkata">Kolkata</option>
+                <option value="kota">Kota</option>
+                <option value="kullu">Kullu</option>
+                <option value="lonavala">Lonavala</option>
+                <option value="lucknow">Lucknow</option>
+                <option value="Ludhiana">Ludhiana</option>
+                <option value="madhurai">Madhurai</option>
+                <option value="manglore">Manglore</option>
+                <option value="manali">Manali</option>
+                <option value="mathura">Mathura</option>
+                <option value="mumbai">Mumbai</option>
+                <option value="munnar">Munnar</option>
+                <option value="mussorie">Mussoorie</option>
+                <option value="mysore">Mysore</option>
+                <option value="nagpur">Nagpur</option>
+                <option value="nainital">Nainital</option>
+                <option value="nashik">Nashik</option>
+                <option value="noida">Noida</option>
+                <option value="ooty">Ooty</option>
+                <option value="panaji">Panaji</option>
+                <option value="patiala">Patiala</option>
+                <option value="patna">Patna</option>
+                <option value="pondicherry">Pondicherry</option>
+                <option value="prayagraj">Prayagraj</option>
+                <option value="pune">Pune</option>
+                <option value="pushkar">Pushkar</option>
+                <option value="rameshwaram">Rameshwaram</option>
+                <option value="ranchi">Ranchi</option>
+                <option value="rishikesh">Rishikesh</option>
+                <option value="shimla">Shimla</option>
+                <option value="srinagar">Srinagar</option>
+                <option value="tirupati">Tirupati</option>
+                <option value="udaipur">Udaipur</option>
+                <option value="varanasi">Varanasi</option>
+                <option value="vasco_di_gama">Vasco Di Gama</option>
+                <option value="vellore">Vellore</option>
+                <option value="vishakhapatnam">Vishakhapatnam</option>
+                <option value="yamunanagar">Yamunanagar</option>
+            </select>
+        </div>
+        <div class="dropdown-container">
+            <label for="transportation-select">Choose Transportation:</label>
+            <select id="transportation-select" onchange="transportationSelected()">
+                <option value="">--Choose Transportation--</option>
+                <option value="hot_air_balloon">Hot Air Balloon</option>
+                <option value="airplane">Airplane</option>
+                <option value="helicopter">Helicopter</option>
+                <option value="private_jet">Private Jet</option>
+                <option value="train">Train</option>
+                <option value="bus/coach">Bus/Coach</option>
+                <option value="private_car">Taxi/Private Car</option>
+                <option value="uber/lyft">Uber/ Lyft</option>
+                <option value="cable_car">Cable Car</option>
+                <option value="segway">Segway</option>
+                <option value="ferry">Ferry</option>
+                <option value="tourist_van">Tourist Van</option>
+                <option value="ship">Ship</option>
+                <option value="speed_boat">Speed Boat</option>
+                <option value="yacht/private_boat">Yacht/ Private Boat</option>
+            </select>
+        </div>
+        <a href="/templates/accommodation.html">Accommodation</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="icons">
+        <i class="fas fa-search" id="search-btn"></i>
+        <i class="fas fa-user" id="login-btn"></i>
+    </div>
+
+</header>
+
+<!-- header section ends -->
+
+<!-- login form container  -->
+
+<div class="login-form-container">
+
+    <i class="fas fa-times" id="form-close"></i>
+
+    <form action="">
+        <h3>login</h3>
+        <input type="email" class="box" placeholder="enter your email">
+        <input type="password" class="box" placeholder="enter your password">
+        <input type="submit" value="login now" class="btn">
+        <input type="checkbox" id="remember">
+        <label for="remember">remember me</label>
+        <p>forget password? <a href="#">click here</a></p>
+        <p>don't have and account? <a href="#">register now</a></p>
+    </form>
+
+</div>
+
+<!-- Chatbot Icon Start -->
+<div class="chatbot-icon" id="chatbotButton">
+    <span class="material-symbols-outlined">tv_signin</span>
+</div>
+
+<style>
+    /* Chatbot Icon Styling */
+    .chatbot-icon {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        background-color: #007bff;
+        color: white;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 30%;
+        cursor: pointer;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+    }
+</style>
+
+<script>
+    document.getElementById("chatbotButton").addEventListener("click", function () {
+        window.location.href = "/templates/chatbot.html";  // Redirects to chatbot page
+    });
+</script>
+
+<!-- Chatbot Icon End -->
+
+<!-- home section starts  -->
+
+<section class="home"  id="home">
+
+    <div class="content wow fadeInUp"data-wow-duration="4s">
+        <h3> <span>Innovative </span> Travel <span>Management</span> & <span>Exploration </span>Platform <span>With </span>Realtime <span>Tracking & </span>Predictive <span>Analytics</span></h3>
+        <p>Let Us Make Your Dream Trip a Reality</p>
+        <a href="/templates/explore.html" class="btn">Explore more</a>
+    </div>
+
+    <div class="controls">
+        <span class="vid-btn active" data-src="images/vid-1.mp4"></span>
+        <span class="vid-btn" data-src="images/vid-2.mp4"></span>
+        <span class="vid-btn" data-src="images/vid-3.mp4"></span>
+        <span class="vid-btn" data-src="images/vid-4.mp4"></span>
+        <span class="vid-btn" data-src="images/vid-5.mp4"></span>
+    </div>
+
+    <div class="video-container">
+        <video src="images/vid-1.mp4" id="video-slider" loop autoplay muted></video>
+    </div>
+
+</section>
+
+<!-- home section ends -->
+
+<!-- book section starts  -->
+
+<section class="book wow fadeInUp" data-wow-duration="4s" id="book" >
+
+    <h1 class="heading">
+        <span>b</span>
+        <span>o</span>
+        <span>o</span>
+        <span>k</span>
+        <span>i</span>
+        <span>n</span>
+        <span>g</span>
+        <span>s</span>
+        <span>e</span>
+        <span>c</span>
+        <span>t</span>
+        <span>i</span>
+        <span>o</span>
+        <span>n</span>
+    </h1>
+
+    <div class="row">
+
+        <div class="image" data-aos="fade-right" data-aos-offset="10" data-aos-duration="500">
+            <img src="images/booknow.jpg" alt="Book Now Image">
+        </div>
+        <div class="booking-info">
+            <h2>Plan Your Next Adventure</h2>
+            <p>Discover amazing places and book your trip easily!</p>
+            <a href="/templates/booknow.html" class="btn">Book Now</a>
+        </div>
+    </div>
+</section>
+
+<!-- book section ends -->
+
+<!-- Tracking Section Starts -->
+
+<section class="track wow fadeInUp" data-wow-duration="4s" id="track">
+    <h1 class="heading">
+        <span>t</span>
+        <span>r</span>
+        <span>a</span>
+        <span>c</span>
+        <span>k</span>
+        <span>y</span>
+        <span>o</span>
+        <span>u</span>
+        <span>r</span>
+        <span>t</span>
+        <span>r</span>
+        <span>i</span>
+        <span>p</span>
+    </h1>
+
+    <div class="row">
+        <div class="image" data-aos="fade-right" data-aos-offset="10" data-aos-duration="500">
+            <img src="images/track.jpg" alt="Track Your Trip">
+        </div>
+        <div>
+            <h2>Track Your Travel</h2>
+            <p>Enter your booking ID to track your travel:</p>
+            <form id="trackingForm" action="/templates/track.html" method="GET">
+                <input type="text" id="bookingId" name="bookingId" placeholder="Enter your booking ID" required>               
+                <button type="submit">Track</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- Tracking Section Ends -->
+
+<!-- categories section starts  -->
+<section class="custom-category" id="custom-category">
+    <h1 class="heading">
+        <span>c</span>
+        <span>a</span>
+        <span>t</span>
+        <span>e</span>
+        <span>g</span>
+        <span>o</span>
+        <span>r</span>
+        <span>y</span>
+    </h1>
+
+    <div class="view-all">
+        <a href="/templates/category.html" class="btn">Categories</a>
+    </div>
+
+    <!-- Custom box container with categories -->
+    <div class="custom-box-container owl-carousel first_carousel">
+        <div class="custom-box wow fadeInUp" data-wow-duration="2s">
+            <a href="images/c-1.jpg" data-lightbox="image-1" data-title="Kaziranga Elephant Safari">
+                <img src="images/c-1.jpg" alt="Jungle Safari">
+            </a>
+            <div class="custom-content">
+                <h3><i class="fas fa-map-marker-alt"></i> Jungle Safari</h3>
+                <p>The Kaziranga National Park situated along the banks of the Brahmaputra is famous for its elephant safaris that give excellent close ups of the Indian one horned rhinoceros. Elephant safaris set out at 5:30 am and at 6:30 am every morning and at 3 pm every afternoon.</p>
+                <div class="custom-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <a href="/templates/category.html" class="btn">Explore more</a>
+            </div>
+        </div>
+
+        <div class="custom-box wow fadeInUp" data-wow-duration="2s">
+            <a href="images/c-2.jpg" data-lightbox="image-2" data-title="Noida">
+                <img src="images/c-2.jpg" alt="City Tour">
+            </a>
+            <div class="custom-content">
+                <h3><i class="fas fa-map-marker-alt"></i> City Tour</h3>
+                <p>Noida is a planned city in India’s northern state of Uttar Pradesh. The riverside Okhla Bird Sanctuary is home to migratory and native birds, plus jackals and butterflies.</p>
+                <div class="custom-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <a href="/templates/category.html" class="btn">Explore more</a>
+            </div>
+        </div>
+
+        <div class="custom-box wow fadeInUp" data-wow-duration="2s">
+            <a href="images/c-4.jpg" data-lightbox="image-3" data-title="Andman & Nicobar">
+                <img src="images/c-4.jpg" alt="Beach">
+            </a>
+            <div class="custom-content">
+                <h3><i class="fas fa-map-marker-alt"></i> Beach</h3>
+                <p>Radhanagar: A beach in the Andaman and Nicobar Islands that is often named one of Asia's best beaches 
+                </p>
+                <div class="custom-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <a href="/templates/category.html" class="btn">Explore more</a>
+            </div>
+        </div>
+
+        <div class="custom-box wow fadeInUp" data-wow-duration="2s">
+            <a href="images/c-3.jpg" data-lightbox="image-4" data-title="Bengaluru">
+                <img src="images/c-3.jpg" alt="Theme Park">
+            </a>
+            <div class="custom-content">
+                <h3><i class="fas fa-map-marker-alt"></i> Theme Park</h3>
+                <p>Wonderla Amusement Park:One of India's largest amusement park chains, with locations in Kochi and Bengaluru. Wonderla offers a variety of rides and slides, and some say the water is clean and well-treated.</p>
+                <div class="custom-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <a href="/templates/category.html" class="btn">Explore more</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Second carousel with categories -->
+    <div class="custom-box-container secound_carousel owl-carousel">
+        <div class="custom-box wow fadeInUp" data-wow-duration="2s">
+            <a href="images/c-8.jpg" data-lightbox="image-5" data-title="Khajuraho">
+                <img src="images/c-8.jpg" alt="Historical Places">
+            </a>
+            <div class="custom-content">
+                <h3><i class="fas fa-map-marker-alt"></i> Historical Places</h3>
+                <p>Khajuraho: This ancient city in Madhya Pradesh is known for its beautiful temples, which are part of the Khajuraho Group of Monuments, a UNESCO World Heritage Site.</p>
+                <div class="custom-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <a href="/templates/category.html" class="btn">Explore more</a>
+            </div>
+        </div>
+
+        <div class="custom-box wow fadeInUp" data-wow-duration="2s">
+            <a href="images/c-9.jpg" data-lightbox="image-6" data-title="Mathura">
+                <img src="images/c-9.jpg" alt="Religious Places">
+            </a>
+            <div class="custom-content">
+                <h3><i class="fas fa-map-marker-alt"></i> Religious Places</h3>
+                <p>Prem Mandir, located in Mathura, is a magnificent temple complex that attracts devotees and tourists alike. The temple is dedicated to Lord Krishna and his eternal love for Radha. </p>
+                <div class="custom-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <a href="/templates/category.html" class="btn">Explore more</a>
+            </div>
+        </div>
+
+        <div class="custom-box wow fadeInUp" data-wow-duration="2s">
+            <a href="images/c-6.jpg" data-lightbox="image-7" data-title="Pune">
+                <img src="images/c-6.jpg" alt="Waterfalls">
+            </a>
+            <div class="custom-content">
+                <h3><i class="fas fa-map-marker-alt"></i> Waterfalls </h3>
+                <p>Thoseghar waterfalls is a scenic spot located near the small village of Thoseghar, 20 km from Satara city, at the edge of the Konkan region, in Western India.</p>
+                <div class="custom-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <a href="/templates/category.html" class="btn">Explore more</a>
+            </div>
+        </div>
+
+        <div class="custom-box wow fadeInUp" data-wow-duration="2s">
+            <a href="images/c-5.jpg" data-lightbox="image-8" data-title="Kangchenjunga">
+                <img src="images/c-5.jpg" alt="Mountains">
+            </a>
+            <div class="custom-content">
+                <h3><i class="fas fa-map-marker-alt"></i> Mountains</h3>
+                <p>Also known as the "Five Treasures of Snow", this mountain is partly located in India and Nepal. It is the world's third largest mountain and is known for its views from Darjeeling.</p>
+                <div class="custom-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <a href="/templates/category.html" class="btn">Explore more</a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- categories section ends -->
+
+<!-- packages section starts  -->
+
+<section class="packages" id="packages">
+
+    <h1 class="heading wow fadeIn">
+        <span>p</span>
+        <span>a</span>
+        <span>c</span>
+        <span>k</span>
+        <span>a</span>
+        <span>g</span>
+        <span>e</span>
+        <span>s</span>
+    </h1>
+
+    <div class="view-all"></div>
+        <a href="/templates/packages.html" class="btn">View All Packages</a>
+    </div>
+
+    <div class="box-container owl-carousel first_carousel">
+
+        <div class="box wow fadeInUp" data-wow-duration="2s">
+            <a href="images/mumbai.jpg" data-lightbox="image-1" data-title="Mumbai"><img src="images/mumbai.jpg" alt="image"></a>
+            <div class="content">
+                <h3> <i class="fas fa-map-marker-alt"></i> Mumbai </h3>
+                <p>Mumbai is one of the hottest metropolises of the world. It might not have a long history but is definitely a place that you should visit if ever planned of....</p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <div class="price"> 25K <span>30K</span> </div>
+                <a href="/templates/packages.html" class="btn">book now</a> <!-- Updated link -->
+            </div>
+        </div>
+
+        <div class="box wow fadeInUp" data-wow-duration="2s">
+            <a href="images/varanasi.jpg" data-lightbox="image-1" data-title="Varanasi"><img src="images/varanasi.jpg" alt="image"></a>
+            <div class="content">
+                <h3> <i class="fas fa-map-marker-alt"></i> Varanasi </h3>
+                <p>Varanasi is considered to be the holiest city and is pretty much relevant to it. Varanasi is also known as Banaras is the spiritual capital of India....</p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <div class="price"> 20K <span>26K</span> </div>
+                <a href="/templates/packages.html" class="btn">book now</a> <!-- Updated link -->
+            </div>
+        </div>
+
+        <div class="box wow fadeInUp" data-wow-duration="2s">
+            <a href="images/darjeeling.jpg" data-lightbox="image-3" data-title="Darjeeling"><img src="images/darjeeling.jpg" alt="image"></a>
+            <div class="content">
+                <h3> <i class="fas fa-map-marker-alt"></i> Darjeeling </h3>
+                <p>Darjeeling. Darjeeling is an important tourism destination in West Bengal. It is located amidst the lower hills of mighty Himalayas. If you think this city....</p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <div class="price"> 25K <span>30K</span> </div>
+                <a href="/templates/packages.html" class="btn">book now</a> <!-- Updated link -->
+            </div>
+        </div>
+
+        <div class="box wow fadeInUp" data-wow-duration="2s">
+            <a href="images/kolkata.jpg" data-lightbox="image-4" data-title="Kolkata"><img src="images/kolkata.jpg" alt="image"></a>
+            <div class="content">
+                <h3> <i class="fas fa-map-marker-alt"></i> Kolkata </h3>
+                <p>Kolkata. A charming city for the unsuspecting traveler, Kolkata has long been known as the country's cultural capital, and continues to be home to some of....</p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <div class="price"> 60K <span>70K</span> </div>
+                <a href="/templates/packages.html" class="btn">book now</a> <!-- Updated link -->
+            </div>
+        </div>
+
+    </div>
+
+    <!-- section item start  -->
+    <div class="box-container secound_carousel owl-carousel ">
+        <div class="box wow fadeInUp" data-wow-duration="2s">
+            <a href="images/munnar.jpg" data-lightbox="image-1" data-title="Munnar"><img src="images/munnar.jpg" alt="image"></a>
+            <div class="content">
+                <h3> <i class="fas fa-map-marker-alt"></i> Munnar </h3>
+                <p>Munnar is a trekker's paradise too, which offers both soft and mountain trekking. Munnar is home to some of the world's best tea estates. The tea plants....</p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <div class="price"> 38K <span>45K</span> </div>
+                <a href="/templates/packages.html" class="btn">book now</a> <!-- Updated link -->
+            </div>
+        </div>
+
+        <div class="box wow fadeInUp" data-wow-duration="2s">
+            <a href="images/nainital.jpg" data-lightbox="image-3" data-title="Srinagar"><img src="images/nainital.jpg" alt="image"></a>
+            <div class="content">
+                <h3> <i class="fas fa-map-marker-alt"></i> Nainital </h3>
+                <p>Nainital is a beautiful hill station in the Kumaon foothills of the Himalayas in Uttarakhand, IndiaNainital, the charming Himalayan lake town,the most popular in Northern India....</p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <div class="price"> 33K <span>39K</span> </div>
+                <a href="/templates/packages.html" class="btn">book now</a> <!-- Updated link -->
+            </div>
+        </div>
+
+        <div class="box wow fadeInUp" data-wow-duration="2s">
+            <a href="images/ladakh.jpg" data-lightbox="image-4" data-title="Ladakh"><img src="images/ladakh.jpg" alt="image"></a>
+            <div class="content">
+                <h3> <i class="fas fa-map-marker-alt"></i> Ladakh </h3>
+                <p>Leh-Ladakh. Set amid the majestic Himalayas, Leh-Ladakh is a haven for adventure enthusiasts and nature lovers alike. Foreign tourists are drawn to the....</p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <div class="price"> 44K <span>50K</span> </div>
+                <a href="/templates/packages.html" class="btn">book now</a> <!-- Updated link -->
+            </div>
+        </div>
+    </div>
+
+</section>
+<!-- packages section ends -->
+
+<!-- services section starts  -->
+
+<section class="services" id="services">
+
+    <h1 class="heading wow fadeIn">
+        <span>s</span>
+        <span>e</span>
+        <span>r</span>
+        <span>v</span>
+        <span>i</span>
+        <span>c</span>
+        <span>e</span>
+        <span>s</span>
+    </h1>
+
+    <div class="box-container">
+
+        <div class="box wow fadeInUp" data-wow-duration="2s">
+            <i class="fas fa-hotel"></i>
+            <h3>Affordable Hotels</h3>
+            <p>We offer a variety of budget-friendly hotels that provide comfort and convenience during your stay, with excellent amenities and prime locations.</p>
+        </div>
+        <div class="box wow fadeInUp" data-wow-duration="2s">
+            <i class="fas fa-utensils"></i>
+            <h3>Food and Drinks</h3>
+            <p>Indulge in delicious local and international cuisines at our curated restaurants, ensuring a delightful dining experience throughout your trip.</p>
+        </div>
+        <div class="box wow fadeInUp" data-wow-duration="2s">
+            <i class="fas fa-bullhorn"></i>
+            <h3>Safety Guide</h3>
+            <p>Your safety is our top priority. We provide detailed travel tips, emergency contacts, and safety advice for a worry-free experience.</p>
+        </div>
+        <div class="box wow fadeInUp" data-wow-duration="2s">
+            <i class="fas fa-globe-asia"></i>
+            <h3>Around the World</h3>
+            <p>Discover unique destinations across the globe, from iconic cities to hidden gems, ensuring unforgettable travel experiences wherever you go.</p>
+        </div>
+        <div class="box wow fadeInUp" data-wow-duration="2s">
+            <i class="fas fa-plane"></i>
+            <h3>Fastest Travel</h3>
+            <p>Enjoy the convenience and speed of modern travel with our quick flight options and reliable transport services that get you to your destination faster.</p>
+        </div>
+        <div class="box wow fadeInUp" data-wow-duration="2s">
+            <i class="fas fa-hiking"></i>
+            <h3>Adventures</h3>
+            <p>Embrace the thrill of adventure with activities such as hiking, trekking, and exploring breathtaking landscapes designed for outdoor enthusiasts.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- services section ends -->
+
+<!-- gallery section starts  -->
+
+<section class="gallery" id="gallery">
+
+    <h1 class="heading wow fadeIn">
+        <span>g</span>
+        <span>a</span>
+        <span>l</span>
+        <span>l</span>
+        <span>e</span>
+        <span>r</span>
+        <span>y</span>
+    </h1>
+
+    <div class="view-all">
+        <a href="/templates/gallery.html" class="btn">Go To Gallery</a>
+    </div>
+
+    <div class="box-container">
+
+        <div class="box wow fadeInUp" data-wow-duration="2s">
+            <img src="images/g-1.jpg" alt="">
+            <div class="content">
+                <h3>amazing places</h3>
+                <p>India is renowned for its breathtaking landscapes, characterized by majestic mountains and sacred rivers. Rivers and mountains not only shape the geography of India but also play a vital role in its culture, spirituality, and biodiversity.</p>
+                <a href="/templates/gallery.html" class="btn">see more</a>
+            </div>
+        </div>
+
+        <div class="box wow fadeInUp" data-wow-duration="2s">
+            <img src="images/g-2.jpg" alt="">
+            <div class="content">
+                <h3>amazing places</h3>
+                <p>India boasts a diverse coastline with stunning beaches, each offering unique experiences, from tranquil retreats to vibrant party scenes. Beaches provide a mix of adventure, relaxation, and cultural experiences, making them popular destinations for both domestic and international tourists.</p>
+                <a href="/templates/gallery.html" class="btn">see more</a>
+            </div>
+        </div>
+
+        <div class="box wow fadeInUp" data-wow-duration="2s">
+            <img src="images/g-3.jpg" alt="">
+            <div class="content">
+                <h3>amazing places</h3>
+                <p>India is rich in history and culture, home to numerous iconic monuments that reflect its architectural heritage and diverse traditions. Monuments are not only architecturally impressive but also hold significant cultural and historical importance, making them essential stops for anyone exploring India.</p>
+                <a href="/templates/gallery.html" class="btn">see more</a>
+            </div>
+        </div>
+
+        <div class="box wow fadeInUp" data-wow-duration="2s">
+            <img src="images/g-4.jpg" alt="">
+            <div class="content">
+                <h3>amazing places</h3>
+                <p>India is a treasure trove of historical sites, each narrating the story of its rich heritage and diverse cultures. Historical sites offer a glimpse into India's rich past, showcasing its architectural brilliance, cultural diversity, and historical significance. Each location is a testament to the legacy of the civilizations that have thrived on this land.</p>
+                <a href="/templates/gallery.html" class="btn">see more</a>
+            </div>
+        </div>
+
+        <div class="box wow fadeInUp" data-wow-duration="2s">
+            <img src="images/g-5.jpg" alt="">
+            <div class="content">
+                <h3>amazing places</h3>
+                <p>India is home to diverse ecosystems and breathtaking natural landscapes, ranging from lush forests to stunning mountains and serene beaches. Natural destinations highlight the incredible diversity of India's landscapes and ecosystems, making them perfect for outdoor enthusiasts, wildlife lovers, and those seeking peace and tranquility in nature.</p>
+                <a href="/templates/gallery.html" class="btn">see more</a>
+            </div>
+        </div>
+
+        <div class="box wow fadeInUp" data-wow-duration="2s">
+            <img src="images/g-6.jpg" alt="">
+            <div class="content">
+                <h3>amazing places</h3>
+                <p>Hot air ballooning offers a unique and exhilarating way to experience breathtaking views of landscapes from above. Hot air ballooning is a magical way to see India's diverse landscapes, offering unforgettable experiences and breathtaking views of the sky and surroundings.</p>
+                <a href="/templates/gallery.html" class="btn">see more</a>
+            </div>
+        </div>
+
+        <div class="box wow fadeInUp" data-wow-duration="2s">
+            <img src="images/g-7.jpg" alt="">
+            <div class="content">
+                <h3>amazing places</h3>
+                <p>India is home to some of the most breathtaking waterfalls in the world, each offering a unique glimpse into the country's diverse landscapes and rich natural beauty. These waterfalls cascade majestically down rocky cliffs, surrounded by lush greenery, creating a mesmerizing spectacle that attracts nature lovers and adventure seekers alike.</p>
+                <a href="/templates/gallery.html" class="btn">see more</a>
+            </div>
+        </div>
+
+        <div class="box wow fadeInUp" data-wow-duration="2s">
+            <img src="images/g-8.jpg" alt="">
+            <div class="content">
+                <h3>amazing places</h3>
+                <p>
+                    The Sanchi Stupas, located in Madhya Pradesh, India, are one of the oldest stone structures in India and a UNESCO World Heritage Site. They are renowned for their architectural grandeur and historical significance, representing the rich Buddhist heritage of the region. </p>
+                <a href="/templates/gallery.html" class="btn">see more</a>
+            </div>
+        </div>
+
+        <div class="box wow fadeInUp" data-wow-duration="2s">
+            <img src="images/g-9.jpg" alt="">
+            <div class="content">
+                <h3>amazing places</h3>
+                <p>India is home to thousands of temples, each with its unique architecture, history, and significance. Temples reflect India's rich spiritual heritage and architectural brilliance. They serve as places of worship, pilgrimage, and historical significance, drawing visitors from around the world to admire their beauty and experience their cultural importance.</p>
+                <a href="/templates/gallery.html" class="btn">see more</a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- gallery section ends -->
+
+<!-- review section starts  -->
+
+<section class="review" id="review">
+
+    <h1 class="heading">
+        <span>r</span>
+        <span>e</span>
+        <span>v</span>
+        <span>i</span>
+        <span>e</span>
+        <span>w</span>
+        <span>s</span>
+    </h1>
+
+    <div class="swiper-container review-slider">
+
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+                <div class="box">
+                    <img src="images/pic1.jpeg" alt="">
+                    <h3>Anisha S.</h3>
+                    <p><p>Incredible Natural Beauty and Serenity</p>I recently visited Munnar with my family, and it was an unforgettable experience! Nestled in the Western Ghats of Kerala, Munnar is a picturesque hill station that offers stunning views and a tranquil atmosphere. The natural beauty, activities, food, and overall enjoyment of the trip.</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="box">
+                    <img src="images/pic2.png" alt="">
+                    <h3>Ravi K.</h3>
+                    <p><p>A Journey of Spiritual Awakening</p>My recent trip to Varanasi was nothing short of transformative. Known as the spiritual capital of India, Varanasi offers a unique blend of ancient traditions, sacred rituals, and breathtaking sights along the banks of the Ganges River.</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="box">
+                    <img src="images/pic3.jpeg" alt="">
+                    <h3>Nikhil S.</h3>
+                    <p><p>A Blissful Escape to Goa Beaches</p>My recent trip to Goa was nothing short of a dream come true! As someone who loves the sun, sand, and sea, Goa provided the perfect getaway for relaxation and adventure. Trip to Goa, various activities, relaxation, and cultural experiences that make it a popular getaway.</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="box">
+                    <img src="images/pic4.png" alt="">
+                    <h3>Ananya K.</h3>
+                    <p><p>Environmental Considerations</p>Dudhsagar Falls is situated in a protected area, and the facilities are designed with sustainability in mind. Efforts are made to minimize litter and maintain the natural beauty of the surroundings. Visitors are encouraged to follow responsible tourism practices, such as carrying back their waste.</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- review section ends -->
+
+<!-- contact section starts  -->
+
+<section class="contact" id="contact">
+    
+    <h1 class="heading">
+        <span>c</span>
+        <span>o</span>
+        <span>n</span>
+        <span>t</span>
+        <span>a</span>
+        <span>c</span>
+        <span>t</span>
+    </h1>
+
+    <div class="row">
+
+        <div class="image">
+            <img src="images/contact.jpg" alt="">
+        </div>
+
+        <form action="">
+            <div class="inputBox">
+                <input type="text" placeholder="name">
+                <input type="email" placeholder="email">
+            </div>
+            <div class="inputBox">
+                <input type="number" placeholder="number">
+                <input type="text" placeholder="subject">
+            </div>
+            <textarea placeholder="message" name="" id="" cols="30" rows="10"></textarea>
+            <input type="submit" class="btn btn-submit" value="send message">
+        </form>
+    </div>
+</section>
+<!-- contact section ends -->
+
+<!-- footer section  -->
+
+<section class="footer">
+    <div class="box-container">
+        <!-- Left Section (About Us & Services) -->
+        <div class="box box-left">
+            <h3><a href="/templates/about.html">About Us</a></h3>
+            <h3><a href="/templates/explore.html">Explore More</a></h3>
+            <h3><a href="/templates/review.html">Reviews</a></h3>
+            <h3><a href="/templates/blog.html">Blog & News</a></h3>
+            <h3><a href="/templates/services.html">Services</a></h3>
+            <h3><a href="/templates/terms.html">Terms & Conditions</a></h3>
+            <h3><a href="/templates/emergency.html">Emergency & Support</a></h3>
+        </div>
+
+        <!-- Center Section (Contact Us and Social Links) -->
+        <div class="box contact-center">
+            <h3>Contact Us</h3>
+            <p>Email: <a href="mailto:itsmerakhi8940@gmail.com">contact@planmytrip.com</a></p>
+            <p>Phone: <a href="tel:+917648877357">+91 764 887 7357</a></p>
+            <p>Address: 46 Main St, Gwalior, India</p>
+            
+            <!-- Social Links -->
+            <div class="social-links">
+                <h3>Follow Us</h3>
+                <a href="https://www.facebook.com/your-page" target="_blank"><img src="images/Facebook.jpg" alt="Facebook"></a>
+                <a href="https://www.instagram.com/" target="_blank"><img src="images/instagram.jpg" alt="Instagram"></a>
+                <a href="https://www.twitter.com/your-handle" target="_blank"><img src="images/twitter.jpg" alt="Twitter"></a>
+                <a href="https://www.linkedin.com/in/rakhi-yadav-347754255" target="_blank"><img src="images/linkedin.jpg" alt="LinkedIn"></a>
+                <a href="https://t.me/your-channel" target="_blank"><img src="images/Telegram.jpg" alt="Telegram"></a>
+                <a href="https://www.pinterest.com/your-page" target="_blank"><img src="images/Pinterest.jpg" alt="Pinterest"></a>
+            </div>
+        </div>
+
+        <!-- Quick Links Section -->
+        <div class="box box-right">
+            <h3>Quick Links</h3> <!-- Add heading for Quick Links -->
+            <ul class="quick-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#month">Choose Month</a></li>
+                <li><a href="#transportation">Transportation</a></li>
+                <li><a href="/templates/accommodation.html">Accommodation</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="/templates/about.html">About Us</a></li> <!-- Link to About Us page -->
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Copyright -->
+    <h1 class="credit"><span>&copy; 2025 Innovative Travel Management & Exploration Platform With Realtime Tracking & Predictive Analytics, Designed by Rakhi </span></h1>
+
+</section>
+<!-- top to bottom scrolling  -->
+<div id="totopscroller"></div>
+<!-- preloader  -->
+<div class="fakeLoader"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- jaquery cdn  -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!-- swiper-bundle.min.js -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<!-- wow js -->
+<script src="js/wow.min.js"></script>
+<!-- lightbox.js -->
+<script src="js/lightbox.js"></script>
+<!-- owl.carousel.min.js -->
+<script src="js/owl.carousel.min.js"></script>
+<!-- top to bottom  -->
+<script src="js/jquery.totop.js"></script>
+<script src="js/fakeLoader.min.js"></script>
+<!-- scroling aos js  -->
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<!-- custom js file link  -->
+<script src="js/script.js"></script>
+<script>
+    // owl carousel
+    $('.first_carousel').owlCarousel({
+    autoplay:true,
+    margin:10,
+    smartSpeed: 1000,
+    nav:true,
+    responsiveClass:true,
+
+    responsive:{
+        0:{
+            items:1,
+            nav:true
+           
+        },
+        600:{
+            items:2,
+            nav:false
+        },
+        1000:{
+            items:3,
+            nav:false,
+            loop:true,
+          
+        }
+    }
+})
+
+// secound carousel 
+ // owl carousel
+ $('.secound_carousel').owlCarousel({
+    autoplay:true,
+    rtl:true,
+    nav:true,
+    margin:10,
+    responsiveClass:true,
+    smartSpeed: 1000,
+    responsive:{
+        0:{
+            items:1,
+            nav:true
+           
+        },
+        600:{
+            items:2,
+            nav:false
+        },
+        1000:{
+            items:3,
+            nav:true,
+            loop:true,
+          
+        }
+    }
+})
+
+// top ot bottom 
+$(function(){
+$('#totopscroller').totopscroller({
+link:'http://127.0.0.1:5500/index.html#' // show a link button
+});
+})
+
+// wow js 
+new WOW().init();
+
+// preloader
+$.fakeLoader();
+
+// aos scrolling  
+AOS.init();
+  //  water Remote Playback
+    $('.water').ripples({
+
+      // Image Url
+      imageUrl: null,
+
+      // The width and height of the WebGL texture to render to. 
+      // The larger this value, the smoother the rendering and the slower the ripples will propagate.
+      resolution: 256,
+
+      // The size (in pixels) of the drop that results by clicking or moving the mouse over the canvas.
+      dropRadius: 20,
+
+      // Basically the amount of refraction caused by a ripple. 
+      // 0 means there is no refraction.
+      perturbance: 0.04,
+
+      // Whether mouse clicks and mouse movement triggers the effect.
+      interactive: true,
+
+      // The crossOrigin attribute to use for the affected image. 
+      crossOrigin: ''
+    });
+   
+</script>
+
+</body>
+</html>
