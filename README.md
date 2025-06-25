@@ -1,5 +1,4 @@
-![Uploading image.png…]()
-
+![image](https://github.com/user-attachments/assets/6b912fc3-cb40-495f-b6ea-9d3d4b3ba80a)
 
 # 🌍 Innovative Travel Management and Exploration Platform  
 ### 🚀 Real-Time Tracking | Predictive Analytics | AI & IoT Integration
