@@ -1,7 +1,7 @@
 
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/fafc71d3-7e7f-41d4-b018-9ad1ab06703c" alt="Banner">
+  <img src="file:///C:/Users/RAKHI/Downloads/img.webp" alt="Banner">
 </p>
 
 # 🌍 Innovative Travel Management and Exploration Platform  
