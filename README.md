@@ -1,4 +1,6 @@
-![image](https://github.com/user-attachments/assets/3af77cda-07bd-4840-890e-de61b5640e5f)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/3af77cda-07bd-4840-890e-de61b5640e5f" alt="Banner" width="100%" style="max-width:900px; min-width:300px;">
+</p>
 
 # 🌍 Innovative Travel Management and Exploration Platform  
 ### 🚀 Real-Time Tracking | Predictive Analytics | AI & IoT Integration
@@ -44,7 +46,13 @@
 - **ESPAsyncWebServer** (Web server on ESP32)
 
 ### 🔌 Hardware
-[Circuit Diagram] ![Circuit Diagram](https://github.com/user-attachments/assets/6c0667e2-9003-456f-82e1-84ba4d023de1)
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/6c0667e2-9003-456f-82e1-84ba4d023de1" alt="Circuit Diagram" width="400">
+  <br/>
+  <b>Circuit Diagram</b>
+</p>
+
 - `ESP32` microcontroller  
 - `Neo-6M GPS` module  
 - `DHT11/DHT22` temperature & humidity
@@ -52,7 +60,12 @@
 - `Rain sensor`, `UV sensor`, `Vibration sensor`  
 - `DFPlayer Mini` + speaker (voice/audio alerts)  
 - `SD Card Module` (data logging)
-[AIoTravel Kit] ![image](https://github.com/user-attachments/assets/e8c7473b-e7ae-4438-aa21-3897fd67329f)
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/e8c7473b-e7ae-4438-aa21-3897fd67329f" alt="AIoTravel Kit" width="400">
+  <br/>
+  <b>AIoTravel Kit</b>
+</p>
 
 ---
 
@@ -113,37 +126,61 @@ Install:
 ## 📷 Screenshots
 
 ### 1. Website Homepage
-![Website Homepage](![image](https://github.com/user-attachments/assets/0931155b-c7b9-4110-9383-089c59f36fe6)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/0931155b-c7b9-4110-9383-089c59f36fe6" alt="Website Homepage" width="600">
+</p>
 
 ### 2. AI Chatbot
-![AI Chatbot](![image](https://github.com/user-attachments/assets/66204325-532f-4ccf-b85e-e9aa2d9f1402)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/66204325-532f-4ccf-b85e-e9aa2d9f1402" alt="AI Chatbot" width="600">
+</p>
 
 ### 3. Real-Time Tracking Page
-![Real-Time Tracking](![image](https://github.com/user-attachments/assets/42522e35-4a00-4509-94db-96e25cd45aca)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/42522e35-4a00-4509-94db-96e25cd45aca" alt="Real-Time Tracking" width="600">
+</p>
 
 ### 4. Login Page
-![Login Page](![image](https://github.com/user-attachments/assets/b468b7dc-60df-46be-b4f4-6068d09f1cc1)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/b468b7dc-60df-46be-b4f4-6068d09f1cc1" alt="Login Page" width="600">
+</p>
 
 ### 5. Booking Section
-![Booking Section]![image](https://github.com/user-attachments/assets/0c5b9496-4602-4685-bebf-25254a2ab8d8)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/0c5b9496-4602-4685-bebf-25254a2ab8d8" alt="Booking Section" width="600">
+</p>
 
 ### 6. Booking & Accommodation Page
-![Booking & Accommodation]![image](https://github.com/user-attachments/assets/4c7c7a8c-29b9-4602-b333-fda299e3cd0a)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/4c7c7a8c-29b9-4602-b333-fda299e3cd0a" alt="Booking & Accommodation" width="600">
+</p>
 
 ### 7. Node-RED Dashboard
-![Node-RED Dashboard]![image](https://github.com/user-attachments/assets/c0231319-328f-4454-9b09-8e135a4c5685)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/c0231319-328f-4454-9b09-8e135a4c5685" alt="Node-RED Dashboard" width="600">
+</p>
 
 ### 8. Exploration Section
-![Exploration Section]![image](https://github.com/user-attachments/assets/c81e90e8-293d-45ac-b4a5-c22354445a4f)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/c81e90e8-293d-45ac-b4a5-c22354445a4f" alt="Exploration Section" width="600">
+</p>
 
 ### 9. Gallery & Packages Section
-![Gallery & Packages]![image](https://github.com/user-attachments/assets/28839a54-6878-46c0-992f-487eceb3eea9)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/28839a54-6878-46c0-992f-487eceb3eea9" alt="Gallery & Packages" width="600">
+</p>
 
 ### 10. Support & Contact Section
-![Support & Contact]![image](https://github.com/user-attachments/assets/ef3dfa39-3f32-4e36-8b31-9af4a34e7696)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/ef3dfa39-3f32-4e36-8b31-9af4a34e7696" alt="Support & Contact" width="600">
+</p>
 
 ### 11. Additional Features
-![Additional Features]![image](https://github.com/user-attachments/assets/50a95af5-b0d9-4030-856b-66ec596ce0c2)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/50a95af5-b0d9-4030-856b-66ec596ce0c2" alt="Additional Features" width="600">
+</p>
+
+---
 
 ## ✨ Credits
 
