@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/f7334ae6-30c4-4b04-b3f6-abf8ee7df1d4" alt="Banner">
+  <img src="https://github.com/user-attachments/assets/86ffdb08-b0db-40d8-b823-8d87e1162137" alt="Banner">
 </p>
 
 # 🌍 Innovative Travel Management and Exploration Platform  
