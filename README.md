@@ -1,8 +1,4 @@
-<p align="center">
-  <img src="" alt="Banner" width="100%" style="max-width:900px; min-width:300px;">
-</p>
-
-https://github.com/user-attachments/assets/3af77cda-07bd-4840-890e-de61b5640e5f
+![img](https://github.com/user-attachments/assets/59028196-d650-40ce-bf9a-fe5f9bd422b3)
 
 # 🌍 Innovative Travel Management and Exploration Platform  
 ### 🚀 Real-Time Tracking | Predictive Analytics | AI & IoT Integration
