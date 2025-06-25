@@ -1,3 +1,5 @@
+![Innovative Travel Management and Exploration Platform Banner](assets/banner.png)
+
 # 🌍 Innovative Travel Management and Exploration Platform  
 ### 🚀 Real-Time Tracking | Predictive Analytics | AI & IoT Integration
 
